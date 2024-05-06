@@ -1,3 +1,5 @@
+using EProject_Sem_3.Models.BookImages;
+
 namespace EProject_Sem_3.Models.Books;
 
 public class BookRes
@@ -13,4 +15,6 @@ public class BookRes
     public int Stock { get; set; } 
     
     public required string Description { get; set; }
+    
+    public List<BookImage> BookImages { get; set; } = [];
 }
