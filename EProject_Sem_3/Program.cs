@@ -2,6 +2,7 @@ using System.Text;
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Mapper;
 using EProject_Sem_3.Models;
+using EProject_Sem_3.Repositories.Books;
 using EProject_Sem_3.Repositories.Users;
 using EProject_Sem_3.Services.TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -76,6 +77,7 @@ builder.Services
 
 // add repositories
 builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IBookRepo, BookRepo>();
 
 // add custom services
 builder.Services.AddSingleton<ITokenService, TokenService>();
