@@ -138,3 +138,4 @@ D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.pdb
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.genruntimeconfig.cache
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\ref\EProject_Sem_3.dll
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.sourcelink.json
