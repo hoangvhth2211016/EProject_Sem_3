@@ -6,7 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EProject_Sem_3.Repositories.Books;
 
-public class BookRepo : IBookRepo {
+public class BookRepo : IBookRepo 
+{
 
     private readonly AppDbContext _context;
     
