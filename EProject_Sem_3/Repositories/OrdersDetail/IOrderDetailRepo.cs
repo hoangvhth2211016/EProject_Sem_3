@@ -9,7 +9,7 @@ public interface IOrderDetailRepo
 
     Task<List<OrderDetailRes>> GetAllByOrder(int orderId);
 
-    void CreateOrderDetail(int orderId, OrderDto dto);
+    Task CreateOrderDetail(int orderId, OrderDto dto);
 
     // void UpdateOrderDetail(int orderId, UpdateOrderDto dto);
 }

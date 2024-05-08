@@ -31,14 +31,15 @@ public class MapperProfile : Profile {
         CreateMap<OrderDetail, OrderDetailRes>()
             .ForMember(dest => dest.Book,
                 opt => opt.MapFrom(src => src.Book));
-        
+          
+    
         // map for list of OrderDetailsRes
         CreateMap<List<OrderDetail>, List<OrderDetailRes>>().ConvertUsing((src, dest, context) =>
         {
             var mapper = context.Mapper;
 
             return src.Select(od => mapper.Map<OrderDetailRes>(od)).ToList();
-        });
+        }); 
         
         // map OrderDetailDto for OrderDetail
         CreateMap<OrderDetailDto, OrderDetail>()
@@ -65,9 +66,5 @@ public class MapperProfile : Profile {
             return src.Select(od => mapper.Map<OrderRes>(od)).ToList();
         });
         
-        // map updateOrderDto for Order
-        CreateMap<UpdateOrderDto, Order>()
-            .ForMember(dest => dest.OrderDetails, 
-                opt => opt.Ignore());
     }
 }

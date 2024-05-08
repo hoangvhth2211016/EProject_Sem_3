@@ -5,14 +5,14 @@ namespace EProject_Sem_3.Repositories.Orders;
 
 public interface IOrderRepo
 {
-    
-    Task<List<OrderRes>> GetAllOrders();
+
+    Task<PageOrderRes> GetAllOrders(int page, int pageSize);
 
     Task<OrderRes> GetOrder(int orderId);
     
     Task<OrderRes> CreateOrder(OrderDto dto);
 
-    Task<OrderRes> UpdateOrder(int orderId, UpdateOrderDto orderDto);
+    Task<string> UpdateOrderStatus(int orderId, OrderStatus newStatus);
     
     Task<string> DeleteOrder(int orderId);
 }

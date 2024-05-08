@@ -25,20 +25,55 @@ public class OrderRepo : IOrderRepo
         _orderDetailRepo = orderDetailRepo;
     }
 
-    public async Task<List<OrderRes>> GetAllOrders()
+    public async Task<PageOrderRes> GetAllOrders(int page, int pageSize)
     { 
-        var orders = await _context.Orders.ToListAsync();
+       
+        var orders = await _context.Orders
+            .Skip((page - 1) * pageSize)
+            .Take(pageSize)
+            .ToListAsync();
         
-        // add list OrdersDetail for orders
+        
         foreach (var order in orders)
         {
             var orderDetails = _context.OrderDetails
                 .Where(od => od.OrderId == order.Id)
                 .ToList();
+            
+            foreach (var orderDetail in orderDetails)
+            {
+               
+                // add list book for order detail
+                var book = await _context.Books.FindAsync(orderDetail.BookId)??
+                            throw new NotFoundException("Book not found");
+                orderDetail.Book = book;
+                
+                // add list bookImages for Book
+                var bookImages = _context.BookImages
+                    .Where(b =>  b.BookId== book.Id)
+                    .ToList();
+                book.BookImages = bookImages;
+
+            }
+            
+            // add list OrdersDetail for orders
             order.OrderDetails = orderDetails;
+            
         }
 
-        return _mapper.Map<List<OrderRes>>(orders);
+        // list Orders --> PageOrder
+        var totalOrders = await _context.Orders.CountAsync();
+        var totalPage = (int)Math.Ceiling((double)totalOrders / pageSize);
+        
+        var pageOrderRes = new PageOrderRes
+        {
+            Orders = _mapper.Map<List<OrderRes>>(orders),
+            Page = page,
+            TotalPage = totalPage,
+            TotalOrders = totalOrders
+        };
+
+        return pageOrderRes;
     }
     
     public async Task<OrderRes> GetOrder(int orderId)
@@ -75,82 +110,72 @@ public class OrderRepo : IOrderRepo
         await _context.SaveChangesAsync();
         
         // save orderDetail to db
-        _orderDetailRepo.CreateOrderDetail(order.Id, dto);
+        await _orderDetailRepo.CreateOrderDetail(order.Id, dto);
         
         // order -> orderRes
         var orderRes = _mapper.Map<OrderRes>(order);
         return orderRes;
     }
 
-    public async Task<OrderRes> UpdateOrder(int orderId, UpdateOrderDto dto)
+    public async Task<string> UpdateOrderStatus(int orderId, OrderStatus newStatus)
     {
+        // find order with orderId
         var orderCurrent =  await _context.Orders.FindAsync(orderId) ?? throw new NotFoundException("Order Not Found");
         
+        // check Status valid
         if (orderCurrent.Status == OrderStatus.Process && 
-            dto.Status is OrderStatus.Completed 
+            newStatus is OrderStatus.Completed 
                         or OrderStatus.Return 
                         or OrderStatus.Returned)
         {
-            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + dto.Status);
+            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + newStatus);
         }
         
         if (orderCurrent.Status == OrderStatus.Shipping &&
-                 dto.Status is OrderStatus.Process 
+            newStatus is OrderStatus.Process 
                             or OrderStatus.Returned 
                             or OrderStatus.Cancel)
         {
-            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + dto.Status);
+            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + newStatus);
         }
         
         if (orderCurrent.Status == OrderStatus.Completed &&
-                 dto.Status is not OrderStatus.Completed )
+            newStatus is not OrderStatus.Completed )
         {
-            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + dto.Status);
+            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + newStatus);
         }
         
         if (orderCurrent.Status == OrderStatus.Return &&
-            dto.Status is not OrderStatus.Returned )
+            newStatus is not OrderStatus.Returned )
         {
-            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + dto.Status);
+            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + newStatus);
         }
         
         if (orderCurrent.Status == OrderStatus.Returned &&
-            dto.Status is not OrderStatus.Returned )
+            newStatus is not OrderStatus.Returned )
         {
-            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + dto.Status);
+            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + newStatus);
         }
         
         if (orderCurrent.Status == OrderStatus.Cancel &&
-            dto.Status is OrderStatus.Completed 
+            newStatus is OrderStatus.Completed 
                         or OrderStatus.Returned 
                         or OrderStatus.Return)
         {
-            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + dto.Status);
+            throw new BadRequestException("Cannot change status " + orderCurrent.Status + " to " + newStatus);
         }
         
-        // Check if dto.UserId is not null and doesn't exist in the database
-        if (dto.UserId != null && !_context.Users.Any(u => u.Id == dto.UserId))
+        // if status valid -> save status
+        orderCurrent.Status = newStatus;
+        try
         {
-            throw new NotFoundException("UserId not found in the database.");
+            await _context.SaveChangesAsync();
+            return "Order status updated successfully";
         }
-        
-      
-        // OrderDto -> Order
-        _mapper.Map(dto, orderCurrent);
-        
-        // update order to db
-        _context.Entry(orderCurrent).State = EntityState.Modified;
-        await _context.SaveChangesAsync();
-        
-        // add OrderDetail for order
-        var orderDetails = _context.OrderDetails
-            .Where(od => od.OrderId == orderCurrent.Id)
-            .ToList();
-        orderCurrent.OrderDetails = orderDetails;
-        
-        // order -> orderRes
-        var orderRes = _mapper.Map<OrderRes>(orderCurrent);
-        return orderRes;
+        catch (Exception ex)
+        {
+            return "Error updating order status: " + ex.Message;
+        }
         
     }
 

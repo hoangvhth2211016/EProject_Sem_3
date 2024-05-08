@@ -22,9 +22,9 @@ public class OrderController : ControllerBase
     //get all orders
     [HttpGet]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> GetAllOrders()
+    public async Task<IActionResult> GetAllOrders(int page = 1, int pageSize = 10)
     {
-        return Ok(await _orderRepo.GetAllOrders());
+        return Ok(await _orderRepo.GetAllOrders(page,pageSize));
     }
     
     //get order
@@ -46,13 +46,11 @@ public class OrderController : ControllerBase
     }
     
     [HttpPut("{orderId}")]
-    public async Task<IActionResult> UpdateOrder(int orderId, UpdateOrderDto dto)
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> UpdateOrderStatus(int orderId,[FromBody] OrderStatus newStatus)
     {
-        if (!ModelState.IsValid) {
-            return BadRequest(ModelState);
-        }
         
-        return Ok(await _orderRepo.UpdateOrder(orderId,dto));
+        return Ok(await _orderRepo.UpdateOrderStatus(orderId,newStatus));
     }
     
     [HttpDelete("{orderId}")]
