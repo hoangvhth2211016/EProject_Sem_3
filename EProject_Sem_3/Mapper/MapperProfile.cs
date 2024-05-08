@@ -50,7 +50,7 @@ public class MapperProfile : Profile {
         
         // map OrderDto for Order
         CreateMap<OrderDto, Order>()
-            .ForMember(dest => dest.OrderDetails, 
+            .ForMember(dest => dest.OrderDetails,
                 opt => opt.Ignore());
         
         // map Order for OrderRes

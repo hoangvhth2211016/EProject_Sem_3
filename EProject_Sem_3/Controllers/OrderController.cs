@@ -36,11 +36,12 @@ public class OrderController : ControllerBase
     }
 
     [HttpPost]
-    public async Task<IActionResult> Checkout(OrderDto dto)
+    public async Task<IActionResult> CreateOrder(OrderDto dto)
     {
         if (!ModelState.IsValid) {
             return BadRequest(ModelState);
         }
+        
         
         return Ok(await _orderRepo.CreateOrder(dto));
     }
@@ -59,4 +60,5 @@ public class OrderController : ControllerBase
     {
         return Ok(await _orderRepo.DeleteOrder(orderId));
     }
+    
 }

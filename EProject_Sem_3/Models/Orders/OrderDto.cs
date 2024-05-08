@@ -27,5 +27,6 @@ public class OrderDto
     [Required]
     public required string Country { get; set; }
 
+    public required decimal TotalAmount { get; set; } = 0; 
     public List<OrderDetailDto> OrderDetails { get; set; } = [];
 }
