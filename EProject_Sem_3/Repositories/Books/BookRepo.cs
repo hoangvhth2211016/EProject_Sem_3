@@ -6,7 +6,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace EProject_Sem_3.Repositories.Books;
 
-public class BookRepo : IBookRepo {
+public class BookRepo : IBookRepo 
+{
 
     private readonly AppDbContext _context;
     
@@ -18,7 +19,18 @@ public class BookRepo : IBookRepo {
     }
 
     public async Task<List<BookRes>> GetAllBooks() {
-        return _mapper.Map<List<BookRes>>(await _context.Books.ToListAsync());
+        var books = await _context.Books.ToListAsync();
+        
+        foreach (var book in books)
+        {
+            // add list bookImages for Book
+            var bookImages = _context.BookImages
+                .Where(b =>  b.BookId== book.Id)
+                .ToList();
+            book.BookImages = bookImages;
+        }
+
+        return _mapper.Map<List<BookRes>>(books);
     }
 
     public async Task<BookRes> GetBook(int id)

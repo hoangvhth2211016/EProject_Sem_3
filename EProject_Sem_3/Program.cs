@@ -7,6 +7,7 @@ using EProject_Sem_3.Repositories.Orders;
 using EProject_Sem_3.Repositories.OrdersDetail;
 using EProject_Sem_3.Repositories.Users;
 using EProject_Sem_3.Services.TokenService;
+using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -85,6 +86,7 @@ builder.Services.AddScoped<IOrderDetailRepo, OrderDetailRepo>();
 
 // add custom services
 builder.Services.AddSingleton<ITokenService, TokenService>();
+builder.Services.AddSingleton<IVnPayService, VnPayService>();
 
 var app = builder.Build();
 

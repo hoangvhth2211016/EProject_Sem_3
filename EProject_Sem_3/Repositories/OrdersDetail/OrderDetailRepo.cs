@@ -41,12 +41,12 @@ public class OrderDetailRepo : IOrderDetailRepo
         return orderDetailResList;
     }
 
-    public async void CreateOrderDetail(int orderId, OrderDto dto)
+    public async Task CreateOrderDetail(int orderId, OrderDto dto)
     {
         // list OrderDetailDto -> list OrderDetail
         var orderDetails = _mapper.Map<List<OrderDetail>>(dto.OrderDetails);
-        
-        // save orderDetail to db
+
+        // add OrderId for OrderDetail
         foreach (var orderDetail in orderDetails)
         {
             // Check if dto.BookId is not null and doesn't exist in the database
@@ -54,32 +54,11 @@ public class OrderDetailRepo : IOrderDetailRepo
 
             orderDetail.Book = book;
             orderDetail.OrderId = orderId;
-            
-            _context.OrderDetails.Add(orderDetail);
-            await _context.SaveChangesAsync();
-        }
-    }
 
-    // public async void UpdateOrderDetail(int orderId, UpdateOrderDto dto)
-    // {
-    //     // delete All OrderDetail
-    //     DeleteAll(orderId);
-    //     
-    //     // list OrderDetailDto -> list OrderDetail
-    //     var orderDetails = _mapper.Map<List<OrderDetail>>(dto.OrderDetails);
-    //     
-    //     // save orderDetail to db
-    //     foreach (var orderDetail in orderDetails)
-    //     {
-    //         // Check if dto.BookId is not null and doesn't exist in the database
-    //         var book = await _context.Books.FindAsync(orderDetail.BookId) ?? throw new NotFoundException("Book Not Found");
-    //
-    //         orderDetail.Book = book;
-    //         orderDetail.OrderId = orderId;
-    //         
-    //         _context.OrderDetails.Add(orderDetail);
-    //         await _context.SaveChangesAsync();
-    //     }
-    // }
+            _context.OrderDetails.Add(orderDetail);
+        }
+
+        await _context.SaveChangesAsync();
+    }
     
 }
