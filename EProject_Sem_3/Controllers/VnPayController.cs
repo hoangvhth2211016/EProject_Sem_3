@@ -18,31 +18,9 @@ public class VnPayController : ControllerBase
     {
         _vnPayService = vnPayService;
     }
+    
 
-    [HttpGet]
-    public async Task<IActionResult> CreateUrlVnpay(OrderDto dto)
-    {
-        
-        // check validation dto
-        if (!ModelState.IsValid)
-        {
-            return BadRequest(ModelState);
-        }
-
-        
-        var vnPayModel = new VnPaymentRequestModel
-        {
-            TotalAmount = dto.TotalAmount,
-            CreatedDate = DateTime.Now,
-            OrderId = new Random().Next(1000, 100000)
-        };
-
-        // create payment url
-        return Ok(_vnPayService.CreatePaymentUrl(HttpContext, vnPayModel));
-
-    }
-
-    [HttpGet("CheckStatus")]
+    [HttpGet("PaymentCallBack")]
     public async Task<IActionResult> PaymentCallBack()
     {
         var respronse = _vnPayService.PaymentExecute(Request.Query);
@@ -52,8 +30,10 @@ public class VnPayController : ControllerBase
         {
             throw new BadRequestException("Payment Fail");
         }
-
-        return Ok("Payment Success");
+        
+        // get orderId from response
+        var orderId = respronse.OrderId.Substring(0, respronse.OrderId.Length - 5);
+        return Ok("Payment Success! OrderId: " + orderId);
 
     }
     

@@ -1,6 +1,9 @@
+using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Orders;
 using EProject_Sem_3.Repositories.Books;
 using EProject_Sem_3.Repositories.Orders;
+using EProject_Sem_3.Repositories.OrdersDetail;
+using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -12,10 +15,15 @@ public class OrderController : ControllerBase
 {
     private readonly IOrderRepo _orderRepo;
 
+    private readonly IOrderDetailRepo _orderDetailRepo;
+    
+    private readonly IVnPayService _vnPayService;
 
-    public OrderController(IOrderRepo orderRepo)
+    public OrderController(IOrderRepo orderRepo,IOrderDetailRepo orderDetailRepo,IVnPayService vnPayService)
     {
+        _orderDetailRepo = orderDetailRepo;
         _orderRepo = orderRepo;
+        _vnPayService = vnPayService;
     }
 
 
@@ -41,9 +49,26 @@ public class OrderController : ControllerBase
         if (!ModelState.IsValid) {
             return BadRequest(ModelState);
         }
+
+        // save order to db
+        var order = await _orderRepo.CreateOrder(dto);
+        
+        // save orderDetail to db
+        await _orderDetailRepo.CreateOrderDetail(order.Id, dto);
         
         
-        return Ok(await _orderRepo.CreateOrder(dto));
+        // create payment url
+        var vnPayModel = new VnPaymentRequestModel
+        {
+            TotalAmount = dto.TotalAmount,
+            CreatedDate = DateTime.Now,
+            OrderId = order.Id,
+            Phone = order.Phone
+        };
+        
+        // return url
+        return Ok(_vnPayService.CreatePaymentUrl(HttpContext, vnPayModel));
+        
     }
     
     [HttpPut("{orderId}")]

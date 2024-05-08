@@ -14,7 +14,7 @@ public class OrderRes
     
     public required string Email { get; set; }
     
-    public string? Phone { get; set; }
+    public required string Phone { get; set; }
 
     public OrderStatus Status { get; set; }
     

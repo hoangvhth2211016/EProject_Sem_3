@@ -15,7 +15,8 @@ namespace EProject_Sem_3.Models.Orders {
         public required string Email { get; set; }
 
         [Phone]
-        public string? Phone { get; set; }
+        [Required]
+        public required string Phone { get; set; }
 
         public OrderStatus Status { get; set; }
 

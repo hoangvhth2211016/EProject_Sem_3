@@ -16,7 +16,8 @@ public class OrderDto
     public required string Email { get; set; }
 
     [Phone]
-    public string? Phone { get; set; }
+    [Required]
+    public required string Phone { get; set; }
     
     [Required]
     public required string Street { get; set; }

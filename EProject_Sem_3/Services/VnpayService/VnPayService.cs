@@ -17,7 +17,7 @@ public class VnPayService : IVnPayService
         
        
             //Get Config Info
-            string vnp_Returnurl = "http://localhost:5180/api/VnPay/CheckStatus"; //URL nhan ket qua tra ve 
+            string vnp_Returnurl = "http://localhost:5180/api/VnPay/PaymentCallBack"; //URL nhan ket qua tra ve 
             string vnp_Url = _config["VnPay:BaseUrl"]; //URL thanh toan cua VNPAY 
             string vnp_TmnCode = "8CJY7ZHO"; //Ma định danh merchant kết nối (Terminal Id)
             string vnp_HashSecret = _config["VnPay:HashSecret"]; //Secret Key
@@ -34,10 +34,10 @@ public class VnPayService : IVnPayService
             vnpay.AddRequestData("vnp_CurrCode", "VND");
             vnpay.AddRequestData("vnp_IpAddr", Utils.GetIpAddress());
             vnpay.AddRequestData("vnp_Locale", "vn");
-            vnpay.AddRequestData("vnp_OrderInfo", "Thanh toan don hang:" + model.OrderId);
+            vnpay.AddRequestData("vnp_OrderInfo", "Thanh toan don hang:" + model.OrderId +". So dien thoai: "+ model.Phone);
             vnpay.AddRequestData("vnp_OrderType", "other"); //default value: other
             vnpay.AddRequestData("vnp_ReturnUrl", vnp_Returnurl);
-            vnpay.AddRequestData("vnp_TxnRef", model.OrderId.ToString()); // Mã tham chiếu của giao dịch tại hệ thống của merchant. Mã này là duy nhất dùng để phân biệt các đơn hàng gửi sang VNPAY. Không được trùng lặp trong ngày
+            vnpay.AddRequestData("vnp_TxnRef", model.OrderId.ToString() + new Random().Next(10000, 99999)); // Mã tham chiếu của giao dịch tại hệ thống của merchant. Mã này là duy nhất dùng để phân biệt các đơn hàng gửi sang VNPAY. Không được trùng lặp trong ngày
             
 
             string paymentUrl = vnpay.CreateRequestUrl(vnp_Url, vnp_HashSecret);

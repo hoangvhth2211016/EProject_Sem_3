@@ -109,8 +109,7 @@ public class OrderRepo : IOrderRepo
         _context.Orders.Add(order);
         await _context.SaveChangesAsync();
         
-        // save orderDetail to db
-        await _orderDetailRepo.CreateOrderDetail(order.Id, dto);
+       
         
         // order -> orderRes
         var orderRes = _mapper.Map<OrderRes>(order);
