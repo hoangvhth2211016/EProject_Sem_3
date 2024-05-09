@@ -1,11 +1,16 @@
+using System.Reflection;
 using System.Text;
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Mapper;
 using EProject_Sem_3.Models;
+using EProject_Sem_3.Repositories.Feedbacks;
+using EProject_Sem_3.Repositories.Plans;
+using EProject_Sem_3.Repositories.Recipes;
 using EProject_Sem_3.Repositories.Users;
 using EProject_Sem_3.Services.TokenService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
@@ -59,6 +64,8 @@ builder.Services.AddSwaggerGen(option => {
             new string[]{}
         }
     });
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    option.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
 
 // add authentication
@@ -86,6 +93,9 @@ builder.Services
 
 // add repositories
 builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IPlanRepo, PlanRepo>();
+builder.Services.AddScoped<IFeedbackRepo, FeedbackRepo>();
+builder.Services.AddScoped<IRecipeRepo, RecipeRepo>();
 
 // add custom services
 builder.Services.AddSingleton<ITokenService, TokenService>();

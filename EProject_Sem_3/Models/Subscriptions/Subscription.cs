@@ -14,9 +14,9 @@ namespace EProject_Sem_3.Models.Subscriptions {
         [Required]
         public DateTime ExpiredAt { get; set; }
 
-        public required User User { get; set; }
+        public User User { get; set; }
 
-        public required Plan Plan { get; set; }
+        public Plan Plan { get; set; }
 
     }
 }
