@@ -32,7 +32,21 @@ public class AppDbContext : DbContext {
                 Role = Role.Admin
             }
             );
-
+        
+        // for plans
+        modelBuilder.Entity<Plan>().HasData(
+            new Plan {
+                Id = 1,
+                Price = 15,
+                Type = PlanType.Monthly
+            },
+            new Plan {
+                Id = 2,
+                Price = 150,
+                Type = PlanType.Yearly
+            }
+            );
+        
         base.OnModelCreating(modelBuilder);
         
         // When deleting an order, the corresponding orderDetail will be deleted

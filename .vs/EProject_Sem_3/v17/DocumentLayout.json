@@ -3,20 +3,128 @@
   "WorkspaceRootPath": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\controllers\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\recipes\\reciperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\recipes\\reciperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\controllers\\recipescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\controllers\\recipescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\mapper\\mapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\mapper\\mapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\recipes\\ireciperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\recipes\\ireciperepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\users\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\users\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipes\\recipetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipes\\recipetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipes\\recipecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipes\\recipecreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\users\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\users\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\users\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\users\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipes\\recipeupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipes\\recipeupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\controllers\\planscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\controllers\\planscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\controllers\\feedbackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\controllers\\feedbackscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipes\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipes\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipes\\reciperes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipes\\reciperes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\users\\changepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\users\\changepassworddto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\users\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\users\\userupdatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipeimages\\recipeimageres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipeimages\\recipeimageres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipeimages\\recipeimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipeimages\\recipeimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\feedbacks\\feedbackrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\feedbacks\\feedbackrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\feedbacks\\feedbackcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\feedbacks\\feedbackcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\feedbacks\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\feedbacks\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\feedbacks\\ifeedbackrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\feedbacks\\ifeedbackrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\subscriptions\\subscriptionres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\subscriptions\\subscriptionres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\subscriptions\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\subscriptions\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\users\\userres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\users\\userres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\plans\\planrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\plans\\planrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\plans\\planres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\plans\\planres.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\plans\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\plans\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\plans\\iplanrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\plans\\iplanrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\users\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -27,28 +135,12 @@
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\users\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\eproject_sem_3.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\eproject_sem_3.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\services\\tokenservice\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\services\\tokenservice\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\users\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\users\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Migrations\\20240505131846_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EProject_Sem_3\\Migrations\\20240505131846_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\feedbacks\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\feedbacks\\feedback.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\books\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -63,20 +155,8 @@
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\bookimages\\bookimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\plans\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\plans\\plan.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\mapper\\mapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\mapper\\mapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\exceptions\\notfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\exceptions\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\exceptions\\exceptionhandlingmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\exceptions\\badrequestexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -87,24 +167,8 @@
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\orderdetails\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipes\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipes\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipeimages\\recipeimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipeimages\\recipeimage.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\subscriptions\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\subscriptions\\subscription.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Migrations\\20240505104651_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EProject_Sem_3\\Migrations\\20240505104651_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\orders\\orderstatus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -113,10 +177,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\plans\\plantype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\plans\\plantype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipes\\recipetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipes\\recipetype.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\migrations\\20240505141542_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -130,7 +190,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,45 +198,332 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "NotFoundException.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\NotFoundException.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Exceptions\\NotFoundException.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\NotFoundException.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Exceptions\\NotFoundException.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAA/AAAA",
+              "DocumentIndex": 4,
+              "Title": "IRecipeRepo.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Recipes\\IRecipeRepo.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Recipes\\IRecipeRepo.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Recipes\\IRecipeRepo.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Recipes\\IRecipeRepo.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAmwAsAAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T13:11:36.581Z"
+              "WhenOpened": "2024-05-08T08:53:22.285Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "UserRepo.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAIBBwBMAAAAwAAAA",
+              "Title": "RecipesController.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\RecipesController.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Controllers\\RecipesController.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\RecipesController.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Controllers\\RecipesController.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAowG4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T09:51:45.989Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-07T07:08:20.04Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Controllers\\AuthController.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAABYAAAAAAAAAAAAAADUAAAAAAAAA",
+              "Title": "RecipeRepo.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Recipes\\RecipeRepo.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Recipes\\RecipeRepo.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Recipes\\RecipeRepo.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Recipes\\RecipeRepo.cs",
+              "ViewState": "AQIAAFUAAAAAAAAAAAAxwFkAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T09:58:52.079Z",
+              "WhenOpened": "2024-05-07T07:02:03.263Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IUserRepo.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAywBMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T05:38:36.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "MapperProfile.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Mapper\\MapperProfile.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Mapper\\MapperProfile.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Mapper\\MapperProfile.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Mapper\\MapperProfile.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAqwBsAAAAZAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T12:57:51.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\UsersController.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Controllers\\UsersController.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\UsersController.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Controllers\\UsersController.cs",
+              "ViewState": "AQIAAFMAAAAAAAAAAAAowF4AAAAlAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T10:58:55.629Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "RecipeUpdateDto.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeUpdateDto.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Recipes\\RecipeUpdateDto.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeUpdateDto.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Recipes\\RecipeUpdateDto.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAxwAsAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T09:02:57.841Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RecipeType.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeType.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Recipes\\RecipeType.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeType.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Recipes\\RecipeType.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T13:53:48.312Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RecipeCreateDto.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeCreateDto.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Recipes\\RecipeCreateDto.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeCreateDto.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Recipes\\RecipeCreateDto.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAIBAwA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T09:00:51.792Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserRepo.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
+              "ViewState": "AQIAAEwAAAAAAAAAAAAmwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T09:24:21.92Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PlansController.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\PlansController.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Controllers\\PlansController.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\PlansController.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Controllers\\PlansController.cs",
+              "ViewState": "AQIAABIAAAAAAAAAAAA4wAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T08:40:22.225Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "FeedBacksController.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\FeedBacksController.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Controllers\\FeedBacksController.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\FeedBacksController.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Controllers\\FeedBacksController.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T08:40:25.086Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "RecipeRes.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeRes.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Recipes\\RecipeRes.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeRes.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Recipes\\RecipeRes.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAcwBMAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T08:22:35.51Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Recipe.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T13:48:22.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ChangePasswordDto.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\ChangePasswordDto.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\ChangePasswordDto.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\ChangePasswordDto.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Users\\ChangePasswordDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T03:09:30.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\User.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\User.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\User.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Users\\User.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAAA9wAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T13:37:57.54Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "UserUpdateDto.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\UserUpdateDto.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\UserUpdateDto.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\UserUpdateDto.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Users\\UserUpdateDto.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAQwA8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-08T02:29:19.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "RecipeImage.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAA2wBAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T13:58:55.839Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "RecipeImageRes.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\RecipeImages\\RecipeImageRes.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\RecipeImages\\RecipeImageRes.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\RecipeImages\\RecipeImageRes.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\RecipeImages\\RecipeImageRes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T08:40:28.879Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "UserRes.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\UserRes.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\UserRes.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\UserRes.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Users\\UserRes.cs",
+              "ViewState": "AQIAABMAAAAAAAAAAAAYwBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T04:36:56.363Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IFeedbackRepo.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Feedbacks\\IFeedbackRepo.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Feedbacks\\IFeedbackRepo.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Feedbacks\\IFeedbackRepo.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Feedbacks\\IFeedbackRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T05:56:24.152Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Feedback.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAA2wAwAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T09:34:04.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "FeedbackCreateDto.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Feedbacks\\FeedbackCreateDto.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Feedbacks\\FeedbackCreateDto.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Feedbacks\\FeedbackCreateDto.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Feedbacks\\FeedbackCreateDto.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAA2wAkAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T05:59:35.329Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "FeedbackRepo.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Feedbacks\\FeedbackRepo.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Feedbacks\\FeedbackRepo.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Feedbacks\\FeedbackRepo.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Feedbacks\\FeedbackRepo.cs",
+              "ViewState": "AQIAABYAAAAAAAAAAAAYwBgAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T06:08:19.996Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "SubscriptionRes.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Subscriptions\\SubscriptionRes.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Subscriptions\\SubscriptionRes.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Subscriptions\\SubscriptionRes.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Subscriptions\\SubscriptionRes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T04:39:17.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "PlanRes.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Plans\\PlanRes.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Plans\\PlanRes.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Plans\\PlanRes.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Plans\\PlanRes.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T04:40:40.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "Plan.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Plans\\Plan.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Plans\\Plan.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Plans\\Plan.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Plans\\Plan.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T04:41:28.776Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\Role.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\Role.cs",
@@ -188,7 +535,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 24,
+              "Title": "Subscription.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAA+wA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T13:45:38.165Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "PlanRepo.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Plans\\PlanRepo.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Plans\\PlanRepo.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Plans\\PlanRepo.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Plans\\PlanRepo.cs",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA3wBcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T08:48:17.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\AppDbContext.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\AppDbContext.cs",
@@ -200,19 +571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\User.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\User.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\User.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Models\\Users\\User.cs",
-              "ViewState": "AQIAABwAAAAAAAAAAADwvxAAAAAOAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T13:37:57.54Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 36,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Orders\\Order.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Orders\\Order.cs",
@@ -224,32 +583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Program.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Program.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Program.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Program.cs",
-              "ViewState": "AQIAACoAAAAAAAAAAAAkwBwAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T13:16:15.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Feedback.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAA2wBAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T09:34:04.279Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 35,
               "Title": "Book.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Books\\Book.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Books\\Book.cs",
@@ -262,6 +596,30 @@
             {
               "$type": "Document",
               "DocumentIndex": 29,
+              "Title": "BaseEntity.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\BaseEntity.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\BaseEntity.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\BaseEntity.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\BaseEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T13:37:47.857Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "IPlanRepo.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Plans\\IPlanRepo.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Plans\\IPlanRepo.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Plans\\IPlanRepo.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Plans\\IPlanRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T08:48:06.733Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
               "Title": "20240505141542_Init.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Migrations\\20240505141542_Init.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Migrations\\20240505141542_Init.cs",
@@ -273,57 +631,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 31,
               "Title": "RegisterDto.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
               "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
               "RelativeToolTip": "EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T12:57:28.537Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T12:57:28.537Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IUserRepo.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "DocumentIndex": 38,
+              "Title": "NotFoundException.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\NotFoundException.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Exceptions\\NotFoundException.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\NotFoundException.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Exceptions\\NotFoundException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAA/AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T09:57:59.911Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-05-05T13:11:36.581Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "EProject_Sem_3.csproj",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\EProject_Sem_3.csproj",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj",
-              "RelativeToolTip": "EProject_Sem_3\\EProject_Sem_3.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-05T10:29:52.415Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "TokenService.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Services\\TokenService\\TokenService.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Services\\TokenService\\TokenService.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Services\\TokenService\\TokenService.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Services\\TokenService\\TokenService.cs",
-              "ViewState": "AQIAACsAAAAAAAAAAAAowAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T13:28:00.321Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 37,
               "Title": "BookImage.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\BookImages\\BookImage.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\BookImages\\BookImage.cs",
@@ -335,31 +667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Plan.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Plans\\Plan.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Plans\\Plan.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Plans\\Plan.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Models\\Plans\\Plan.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T13:41:36.611Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "MapperProfile.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Mapper\\MapperProfile.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Mapper\\MapperProfile.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Mapper\\MapperProfile.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Mapper\\MapperProfile.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T12:57:51.144Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 34,
               "Title": "20240505131846_Init.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Migrations\\20240505131846_Init.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Migrations\\20240505131846_Init.cs",
@@ -371,19 +679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "ExceptionHandlingMiddleware.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\ExceptionHandlingMiddleware.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Exceptions\\ExceptionHandlingMiddleware.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\ExceptionHandlingMiddleware.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Exceptions\\ExceptionHandlingMiddleware.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAA0wDUAAAA8AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T13:13:14.29Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 39,
               "Title": "BadRequestException.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\BadRequestException.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Exceptions\\BadRequestException.cs",
@@ -395,7 +691,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 40,
               "Title": "OrderDetail.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\OrderDetails\\OrderDetail.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\OrderDetails\\OrderDetail.cs",
@@ -407,43 +703,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "Recipe.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAA2wBcAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T13:48:22.213Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "Subscription.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAA0wBYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T13:45:38.165Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "RecipeImage.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T13:58:55.839Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 41,
               "Title": "20240505104651_Init.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Migrations\\20240505104651_Init.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Migrations\\20240505104651_Init.cs",
@@ -455,19 +715,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "RecipeType.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeType.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Recipes\\RecipeType.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\RecipeType.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Models\\Recipes\\RecipeType.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T13:53:48.312Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 43,
               "Title": "PlanType.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Plans\\PlanType.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Plans\\PlanType.cs",
@@ -479,19 +727,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "BaseEntity.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\BaseEntity.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\BaseEntity.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\BaseEntity.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Models\\BaseEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-04T13:37:47.857Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 42,
               "Title": "OrderStatus.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Orders\\OrderStatus.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Orders\\OrderStatus.cs",

@@ -2,8 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EProject_Sem_3.Models.Users;
 
-public class RegisterDto
-{
+public class RegisterDto {
     [Required]
     public required string Name { get; set; }
 
@@ -16,4 +15,7 @@ public class RegisterDto
 
     [Required]
     public required string Username { get; set; }
+
+    [Required]
+    public required int planId { get; set; }
 }
