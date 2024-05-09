@@ -50,6 +50,11 @@ namespace EProject_Sem_3.Exceptions {
                 message = exception.Message;
                 stackTrace = exception.StackTrace;
             }
+            else if (exceptionType == typeof(AlreadyException)) {
+                status = HttpStatusCode.Conflict;
+                message = exception.Message;
+                stackTrace = exception.StackTrace;
+            }
             else {
                 status = HttpStatusCode.InternalServerError;
                 message = exception.Message;

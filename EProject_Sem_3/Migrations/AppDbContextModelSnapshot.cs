@@ -413,7 +413,7 @@ namespace EProject_Sem_3.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@gmail.com",
                             Name = "admin",
-                            Password = "$2a$11$lmJPOmu9nGxUR2fn6ycofulNQqtOnZqJake7R0MOfSmsVIPz/sRca",
+                            Password = "$2a$11$chUIA.CmPZnPYtsOSOOHZODhFG553LGI.jepyPsf6Tamu17YfX80K",
                             Role = 0,
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "admin"
