@@ -7,4 +7,6 @@ public interface IUserRepo {
 
     Task<TokenDto> Login(LoginDto dto);
 
+    Task<User> FindByUsername(string username);
+
 }

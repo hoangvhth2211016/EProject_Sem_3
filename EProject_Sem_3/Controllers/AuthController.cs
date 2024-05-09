@@ -40,13 +40,10 @@ namespace EProject_Sem_3.Controllers {
                 return BadRequest(ModelState);
             }
             TokenDto token = await userRepo.Login(dto);
-            if (token == null) {
-                return BadRequest("Unable to login");
-            }
             return Ok(token);
         }
 
-        [Authorize(Roles = "User,Admin")]
+        //[Authorize(Roles = "User,Admin")]
         [HttpGet("Test")]
         public IActionResult Test() {
             return Ok("this route is protected");

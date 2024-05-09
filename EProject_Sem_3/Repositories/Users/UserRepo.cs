@@ -23,15 +23,20 @@ public class UserRepo : IUserRepo {
     }
 
     public async Task<TokenDto> Login(LoginDto dto) {
-        var user = await context.Users.FirstOrDefaultAsync(e => e.Username.Equals(dto.Username));
-        if (user == null) {
-            throw new NotFoundException("User not found");
-        }
+        var user = await FindByUsername(dto.Username);
         if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password)) {
             throw new BadRequestException("Password incorrect");
         }
         var token = tokenService.CreateToken(user);
 
         return new TokenDto { AccessToken = token };
+    }
+
+    public async Task<User> FindByUsername(string username) {
+        var user = await context.Users.FirstOrDefaultAsync(e => e.Username.Equals(username));
+        if (user == null) {
+            throw new NotFoundException("User not found");
+        }
+        return user;
     }
 }

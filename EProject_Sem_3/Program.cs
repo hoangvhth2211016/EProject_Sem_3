@@ -26,6 +26,16 @@ builder.Services.AddEndpointsApiExplorer();
 // add db context
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
 
+// setup cors
+builder.Services.AddCors(options => {
+    options.AddPolicy("ApiPolicy", builder => {
+        builder
+        .AllowAnyOrigin()
+        .AllowAnyMethod()
+        .AllowAnyHeader();
+    });
+});
+
 // add mapper
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 
@@ -97,6 +107,8 @@ if (app.Environment.IsDevelopment()) {
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("ApiPolicy");
 
 app.UseAuthentication();
 

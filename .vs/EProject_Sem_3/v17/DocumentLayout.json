@@ -11,6 +11,18 @@
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\users\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\users\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\users\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\users\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\users\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\users\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -21,10 +33,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\eproject_sem_3.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\eproject_sem_3.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\users\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\users\\userrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\services\\tokenservice\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -79,10 +87,6 @@
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\orderdetails\\orderdetail.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\users\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\users\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\recipes\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\models\\recipes\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -97,10 +101,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Migrations\\20240505104651_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:EProject_Sem_3\\Migrations\\20240505104651_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\repositories\\users\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|solutionrelative:eproject_sem_3\\repositories\\users\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{52EF2DB2-E655-41AD-952F-0E8CCBFF1478}|EProject_Sem_3\\EProject_Sem_3.csproj|d:\\personal_project\\github_study\\eproject_sem_3\\eproject_sem_3\\models\\baseentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -130,7 +130,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Bookmark",
@@ -138,19 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "EProject_Sem_3.csproj",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\EProject_Sem_3.csproj",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj",
-              "RelativeToolTip": "EProject_Sem_3\\EProject_Sem_3.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-05-05T10:29:52.415Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "NotFoundException.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\NotFoundException.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Exceptions\\NotFoundException.cs",
@@ -162,15 +150,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "UserRepo.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
               "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
               "RelativeToolTip": "EProject_Sem_3\\Repositories\\Users\\UserRepo.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAA2wBMAAAAwAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAIBBwBMAAAAwAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T09:51:45.989Z"
+              "WhenOpened": "2024-05-05T09:51:45.989Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -180,14 +169,14 @@
               "RelativeDocumentMoniker": "EProject_Sem_3\\Controllers\\AuthController.cs",
               "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Controllers\\AuthController.cs",
               "RelativeToolTip": "EProject_Sem_3\\Controllers\\AuthController.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAmwDEAAAAZAAAA",
+              "ViewState": "AQIAABYAAAAAAAAAAAAAADUAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T09:58:52.079Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 9,
               "Title": "Role.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\Role.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\Role.cs",
@@ -199,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
               "Title": "AppDbContext.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\AppDbContext.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\AppDbContext.cs",
@@ -211,7 +200,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
               "Title": "User.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\User.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\User.cs",
@@ -223,7 +212,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Order.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Orders\\Order.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Orders\\Order.cs",
@@ -241,14 +230,14 @@
               "RelativeDocumentMoniker": "EProject_Sem_3\\Program.cs",
               "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Program.cs",
               "RelativeToolTip": "EProject_Sem_3\\Program.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAqwAwAAAAAAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAkwBwAAAAZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-05T13:16:15.857Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 11,
               "Title": "Feedback.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Feedbacks\\Feedback.cs",
@@ -260,7 +249,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 12,
               "Title": "Book.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Books\\Book.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Books\\Book.cs",
@@ -284,7 +273,45 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 4,
+              "Title": "RegisterDto.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T12:57:28.537Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IUserRepo.cs",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
+              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T09:57:59.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EProject_Sem_3.csproj",
+              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj",
+              "RelativeDocumentMoniker": "EProject_Sem_3\\EProject_Sem_3.csproj",
+              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj",
+              "RelativeToolTip": "EProject_Sem_3\\EProject_Sem_3.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-05T10:29:52.415Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "TokenService.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Services\\TokenService\\TokenService.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Services\\TokenService\\TokenService.cs",
@@ -296,7 +323,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "BookImage.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\BookImages\\BookImage.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\BookImages\\BookImage.cs",
@@ -308,7 +335,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "Plan.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Plans\\Plan.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Plans\\Plan.cs",
@@ -320,7 +347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "MapperProfile.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Mapper\\MapperProfile.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Mapper\\MapperProfile.cs",
@@ -332,7 +359,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 10,
               "Title": "20240505131846_Init.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Migrations\\20240505131846_Init.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Migrations\\20240505131846_Init.cs",
@@ -344,7 +371,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "ExceptionHandlingMiddleware.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\ExceptionHandlingMiddleware.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Exceptions\\ExceptionHandlingMiddleware.cs",
@@ -356,7 +383,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 19,
               "Title": "BadRequestException.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Exceptions\\BadRequestException.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Exceptions\\BadRequestException.cs",
@@ -368,19 +395,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "RegisterDto.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Models\\Users\\RegisterDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T12:57:28.537Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 20,
               "Title": "OrderDetail.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\OrderDetails\\OrderDetail.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\OrderDetails\\OrderDetail.cs",
@@ -392,7 +407,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "Recipe.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Recipes\\Recipe.cs",
@@ -404,7 +419,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "Subscription.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\Subscriptions\\Subscription.cs",
@@ -416,7 +431,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "RecipeImage.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Models\\RecipeImages\\RecipeImage.cs",
@@ -429,18 +444,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 24,
-              "Title": "IUserRepo.cs",
-              "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
-              "RelativeDocumentMoniker": "EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
-              "ToolTip": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
-              "RelativeToolTip": "EProject_Sem_3\\Repositories\\Users\\IUserRepo.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAABAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-05T09:57:59.911Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
               "Title": "20240505104651_Init.cs",
               "DocumentMoniker": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\Migrations\\20240505104651_Init.cs",
               "RelativeDocumentMoniker": "EProject_Sem_3\\Migrations\\20240505104651_Init.cs",
