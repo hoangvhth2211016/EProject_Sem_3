@@ -2,8 +2,12 @@ using System.Text;
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Mapper;
 using EProject_Sem_3.Models;
+using EProject_Sem_3.Repositories.Books;
+using EProject_Sem_3.Repositories.Orders;
+using EProject_Sem_3.Repositories.OrdersDetail;
 using EProject_Sem_3.Repositories.Users;
 using EProject_Sem_3.Services.TokenService;
+using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -21,16 +25,6 @@ builder.Services.AddEndpointsApiExplorer();
 
 // add db context
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
-
-// setup cors
-builder.Services.AddCors(options => {
-    options.AddPolicy("ApiPolicy", builder => {
-        builder
-        .AllowAnyOrigin()
-        .AllowAnyMethod()
-        .AllowAnyHeader();
-    });
-});
 
 // add mapper
 builder.Services.AddAutoMapper(typeof(MapperProfile));
@@ -86,9 +80,13 @@ builder.Services
 
 // add repositories
 builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IBookRepo, BookRepo>();
+builder.Services.AddScoped<IOrderRepo, OrderRepo>();
+builder.Services.AddScoped<IOrderDetailRepo, OrderDetailRepo>();
 
 // add custom services
 builder.Services.AddSingleton<ITokenService, TokenService>();
+builder.Services.AddSingleton<IVnPayService, VnPayService>();
 
 var app = builder.Build();
 
@@ -100,8 +98,6 @@ if (app.Environment.IsDevelopment()) {
 
 app.UseHttpsRedirection();
 
-app.UseCors("ApiPolicy");
-
 app.UseAuthentication();
 
 app.UseAuthorization();
@@ -111,4 +107,3 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.MapControllers();
 
 app.Run();
-

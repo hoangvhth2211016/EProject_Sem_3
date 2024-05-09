@@ -34,7 +34,14 @@ public class AppDbContext : DbContext {
             );
 
         base.OnModelCreating(modelBuilder);
+        
+        // When deleting an order, the corresponding orderDetail will be deleted
+        modelBuilder.Entity<Order>()
+            .HasMany(o => o.OrderDetails)
+            .WithOne(od => od.Order)
+            .OnDelete(DeleteBehavior.Cascade);
     }
+    
 
     public DbSet<User> Users { get; set; }
 

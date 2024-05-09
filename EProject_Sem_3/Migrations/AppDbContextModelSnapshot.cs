@@ -381,7 +381,7 @@ namespace EProject_Sem_3.Migrations
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@gmail.com",
                             Name = "admin",
-                            Password = "$2a$11$7JtDXQlYooB.FiIzfPnfeeEG3Jh7pBQeB85gOdhUVv8Qmh1IFHBpS",
+                            Password = "$2a$11$chUIA.CmPZnPYtsOSOOHZODhFG553LGI.jepyPsf6Tamu17YfX80K",
                             Role = 0,
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "admin"
