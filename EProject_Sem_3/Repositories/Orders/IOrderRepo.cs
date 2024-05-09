@@ -14,5 +14,5 @@ public interface IOrderRepo
 
     Task<string> UpdateOrderStatus(int orderId, OrderStatus newStatus);
     
-    Task<string> DeleteOrder(int orderId);
+    void DeleteOrder(int orderId);
 }

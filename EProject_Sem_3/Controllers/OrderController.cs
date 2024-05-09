@@ -5,6 +5,7 @@ using EProject_Sem_3.Repositories.Orders;
 using EProject_Sem_3.Repositories.OrdersDetail;
 using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EProject_Sem_3.Controllers;
@@ -83,7 +84,8 @@ public class OrderController : ControllerBase
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteOrder(int orderId)
     {
-        return Ok(await _orderRepo.DeleteOrder(orderId));
+        _orderRepo.DeleteOrder(orderId);
+        return Ok("The order had been Deleted");
     }
     
 }

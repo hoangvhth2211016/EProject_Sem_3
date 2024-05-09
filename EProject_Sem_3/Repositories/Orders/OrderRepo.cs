@@ -178,13 +178,12 @@ public class OrderRepo : IOrderRepo
         
     }
 
-    public async Task<string> DeleteOrder(int orderId)
+    public async void DeleteOrder(int orderId)
     {
         var order = await _context.Orders.FindAsync(orderId) ?? throw new NotFoundException("Order Not Found");
         
         _context.Orders.Remove(order);
         await _context.SaveChangesAsync();
-
-        return "The order has been deleted";
+        
     }
 }
