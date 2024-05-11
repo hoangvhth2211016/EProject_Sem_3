@@ -16,13 +16,11 @@ public class OrderRepo : IOrderRepo
 
     private readonly IMapper _mapper;
 
-    private readonly IOrderDetailRepo _orderDetailRepo;
 
-    public OrderRepo(AppDbContext context, IMapper mapper, IOrderDetailRepo orderDetailRepo)
+    public OrderRepo(AppDbContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
-        _orderDetailRepo = orderDetailRepo;
     }
 
     public async Task<PageOrderRes> GetAllOrders(int page, int pageSize)
@@ -63,14 +61,15 @@ public class OrderRepo : IOrderRepo
 
         // list Orders --> PageOrder
         var totalOrders = await _context.Orders.CountAsync();
-        var totalPage = (int)Math.Ceiling((double)totalOrders / pageSize);
+        var lastPage = (int)Math.Ceiling((double)totalOrders / pageSize);
         
         var pageOrderRes = new PageOrderRes
         {
             Orders = _mapper.Map<List<OrderRes>>(orders),
             Page = page,
-            TotalPage = totalPage,
-            TotalOrders = totalOrders
+            LastPage = lastPage,
+            TotalOrders = totalOrders,
+            PerPage = pageSize
         };
 
         return pageOrderRes;
@@ -178,13 +177,12 @@ public class OrderRepo : IOrderRepo
         
     }
 
-    public async Task<string> DeleteOrder(int orderId)
+    public async void DeleteOrder(int orderId)
     {
         var order = await _context.Orders.FindAsync(orderId) ?? throw new NotFoundException("Order Not Found");
         
         _context.Orders.Remove(order);
         await _context.SaveChangesAsync();
-
-        return "The order has been deleted";
+        
     }
 }

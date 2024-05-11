@@ -1,5 +1,8 @@
+using AutoMapper;
+using BCrypt.Net;
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
+using EProject_Sem_3.Models.Subscriptions;
 using EProject_Sem_3.Models.Users;
 using EProject_Sem_3.Services.TokenService;
 using Microsoft.EntityFrameworkCore;
@@ -8,30 +11,99 @@ namespace EProject_Sem_3.Repositories.Users;
 
 public class UserRepo : IUserRepo {
 
-    private AppDbContext context;
+    private readonly AppDbContext context;
 
-    private ITokenService tokenService;
+    private readonly ITokenService tokenService;
 
-    public UserRepo(AppDbContext context, ITokenService tokenService) {
+    private readonly IMapper mapper;
+
+    public UserRepo(AppDbContext context, ITokenService tokenService, IMapper mapper) {
         this.context = context;
         this.tokenService = tokenService;
+        this.mapper = mapper;
     }
 
-    public async Task<int> Register(User user) {
-        await context.Users.AddAsync(user);
-        return await context.SaveChangesAsync();
+    public async Task Register(RegisterDto dto) {
+
+        // check if plan exist
+        if (await context.Plans.AnyAsync(p => p.Id == dto.planId)) throw new NotFoundException("Plan not found");
+
+        //Map user
+        User newUser = mapper.Map<User>(dto);
+        newUser.Role = Role.User;
+        newUser.Password = BCrypt.Net.BCrypt.HashPassword(newUser.Password);
+
+        // create new user
+        var entityEntry = await context.Users.AddAsync(newUser);
+        var entity = entityEntry.Entity;
+
+        await context.SaveChangesAsync();
+
+        // create a new subscription
+        Subscription newSub = new() {
+            PlanId = dto.planId,
+            UserId = entity.Id,
+            ExpiredAt = DateTime.Now.AddMonths(6)
+        };
+
+
+        await context.Subscriptions.AddAsync(newSub);
+
+        await context.SaveChangesAsync();
     }
 
     public async Task<TokenDto> Login(LoginDto dto) {
-        var user = await context.Users.FirstOrDefaultAsync(e => e.Username.Equals(dto.Username));
-        if (user == null) {
-            throw new NotFoundException("User not found");
-        }
+        var user = await FindByUsername(dto.Username);
         if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password)) {
             throw new BadRequestException("Password incorrect");
         }
         var token = tokenService.CreateToken(user);
 
         return new TokenDto { AccessToken = token };
+    }
+
+    public async Task<User> FindByUsername(string username) {
+        var user = await context.Users.FirstOrDefaultAsync(e => e.Username.Equals(username));
+        return user ?? throw new NotFoundException("User not found");
+    }
+
+    public async Task<List<User>> FindAll() {
+        return await context.Users.ToListAsync();
+    }
+
+    public async Task<object?> FindById(int id) {
+        var user = await context.Users
+            .Where(u => u.Id == id)
+            .Include(u => u.Subscriptions)
+            .ThenInclude(s => s.Plan)
+            .FirstOrDefaultAsync();
+        return user == null ? throw new NotFoundException("User not found") : (object)mapper.Map<UserRes>(user);
+    }
+
+    public async Task<User> UpdateUser(User user, UserUpdateDto dto) {
+        mapper.Map(dto, user);
+        await context.SaveChangesAsync();
+        return user;
+    }
+
+
+    public async Task ChangePassword(User user, ChangePasswordDto dto) {
+        user.Password = BCrypt.Net.BCrypt
+            .ValidateAndReplacePassword(
+                dto.OldPassword,
+                user.Password,
+                dto.NewPassword
+            );
+        await context.SaveChangesAsync();
+    }
+
+    public async Task ActivateUser(int userId)
+    {
+        // find user with userId
+        var userCurrent = await context.Users.FirstOrDefaultAsync(u => u.Id == userId) ??
+                          throw new NotFoundException("User not found");
+        userCurrent.IsActivated = true;
+        await context.SaveChangesAsync();
+
     }
 }

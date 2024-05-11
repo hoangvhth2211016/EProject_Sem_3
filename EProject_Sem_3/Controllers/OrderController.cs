@@ -5,6 +5,7 @@ using EProject_Sem_3.Repositories.Orders;
 using EProject_Sem_3.Repositories.OrdersDetail;
 using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EProject_Sem_3.Controllers;
@@ -19,7 +20,9 @@ public class OrderController : ControllerBase
     
     private readonly IVnPayService _vnPayService;
 
-    public OrderController(IOrderRepo orderRepo,IOrderDetailRepo orderDetailRepo,IVnPayService vnPayService)
+    public OrderController(IOrderRepo orderRepo,
+                            IOrderDetailRepo orderDetailRepo,
+                            IVnPayService vnPayService)
     {
         _orderDetailRepo = orderDetailRepo;
         _orderRepo = orderRepo;
@@ -83,7 +86,16 @@ public class OrderController : ControllerBase
     [Authorize(Roles = "Admin")]
     public async Task<IActionResult> DeleteOrder(int orderId)
     {
-        return Ok(await _orderRepo.DeleteOrder(orderId));
+        _orderRepo.DeleteOrder(orderId);
+        return Ok("The order had been Deleted");
     }
     
+    
+    //get all orders detail
+    [HttpGet("{orderId}/OrdersDetais")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetAllByOrder(int orderId)
+    {
+        return Ok(await _orderDetailRepo.GetAllByOrder(orderId));
+    }
 }
