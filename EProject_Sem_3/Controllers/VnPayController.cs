@@ -29,18 +29,21 @@ public class VnPayController : ControllerBase
     {
         var respronse = _vnPayService.PaymentExecute(Request.Query);
         
-        // get orderId from response
-        var orderId = respronse.OrderId.Substring(0, respronse.OrderId.Length - 5);
+        
         
         // if VnPayResponseCode != 00 -> payment fail
         if (respronse is not { VnPayResponseCode: "00" })
         {
             // if payment fail -> delete order 
-            _orderRepo.DeleteOrder(int.Parse(orderId));
             throw new BadRequestException("Payment Fail");
         }
         
+        // get orderId from response
+        var orderId = respronse.Respronse.Substring(0, respronse.Respronse.Length - 5);
        
+        // if payment success -> change status Paid
+        await _orderRepo.UpdateOrderStatus(Convert.ToInt32(orderId), OrderStatus.Paid);
+        
         
         return Ok("Payment Success! OrderId: " + orderId);
 

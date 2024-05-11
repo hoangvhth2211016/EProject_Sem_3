@@ -128,6 +128,18 @@
         <member name="M:EProject_Sem_3.Migrations.Update_Plan_Table.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:EProject_Sem_3.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
         <member name="T:EProject_Sem_3.Migrations.update_user_table">
             <inheritdoc />
         </member>
@@ -162,6 +174,30 @@
             <inheritdoc />
         </member>
         <member name="M:EProject_Sem_3.Migrations.updaterecipetable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.TestDatabaseNameChange">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.TestDatabaseNameChange.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.TestDatabaseNameChange.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.TestDatabaseNameChange.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.quanganh">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.quanganh.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.quanganh.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.quanganh.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

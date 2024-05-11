@@ -96,4 +96,14 @@ public class UserRepo : IUserRepo {
             );
         await context.SaveChangesAsync();
     }
+
+    public async Task ActivateUser(int userId)
+    {
+        // find user with userId
+        var userCurrent = await context.Users.FirstOrDefaultAsync(u => u.Id == userId) ??
+                          throw new NotFoundException("User not found");
+        userCurrent.IsActivated = true;
+        await context.SaveChangesAsync();
+
+    }
 }

@@ -18,4 +18,5 @@ public interface IUserRepo {
 
     Task ChangePassword(User user, ChangePasswordDto dto);
 
+    Task ActivateUser(int userId);
 }
