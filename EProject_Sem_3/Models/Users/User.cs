@@ -1,3 +1,4 @@
+using EProject_Sem_3.Models.Recipes;
 using EProject_Sem_3.Models.Subscriptions;
 using System.ComponentModel.DataAnnotations;
 
@@ -24,6 +25,12 @@ public class User : BaseEntity {
 
     public string? Avatar { get; set; }
 
-    public List<Subscription> Subscriptions { get; set; } = [];
+    public string? Street { get; set; }
+
+    public string? City { get; set; }
+
+    public string? Country { get; set; }
+
+    public ICollection<Subscription> Subscriptions { get; set; } = [];
 
 }

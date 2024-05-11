@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using EProject_Sem_3.Models.Users;
+using EProject_Sem_3.Repositories.Plans;
 using EProject_Sem_3.Repositories.Users;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -12,33 +13,25 @@ namespace EProject_Sem_3.Controllers {
 
         private readonly IUserRepo userRepo;
 
-        private IMapper mapper;
 
-        public AuthController(IUserRepo userRepo, IMapper mapper) {
+        public AuthController(IUserRepo userRepo) {
             this.userRepo = userRepo;
-            this.mapper = mapper;
         }
 
+        /// <summary>
+        /// register user
+        /// </summary>
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterDto dto) {
-            if (!ModelState.IsValid) {
-                return BadRequest(ModelState);
-            }
-            User newUser = mapper.Map<User>(dto);
-            newUser.Role = Role.User;
-            newUser.Password = BCrypt.Net.BCrypt.HashPassword(newUser.Password);
-            int success = await userRepo.Register(newUser);
-            if (success > 0) {
-                return Ok(newUser);
-            }
-            return BadRequest("Unable to create user");
+            await userRepo.Register(dto);
+            return Ok("new user created");
         }
 
+        /// <summary>
+        /// login
+        /// </summary>
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDto dto) {
-            if (!ModelState.IsValid) {
-                return BadRequest(ModelState);
-            }
             TokenDto token = await userRepo.Login(dto);
             return Ok(token);
         }
@@ -46,7 +39,7 @@ namespace EProject_Sem_3.Controllers {
         //[Authorize(Roles = "User,Admin")]
         [HttpGet("Test")]
         public IActionResult Test() {
-            return Ok("this route is protected");
+            return Ok(User.Identity.IsAuthenticated);
         }
 
     }
