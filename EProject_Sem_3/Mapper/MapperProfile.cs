@@ -37,6 +37,7 @@ public class MapperProfile : Profile
 
         // map for recipe image
         CreateMap<RecipeImage, RecipeImageRes>();
+        CreateMap<RecipeImageCreateDto, RecipeImage>();
 
         // map for bookRes
         CreateMap<Book, BookRes>();

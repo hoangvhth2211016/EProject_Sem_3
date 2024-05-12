@@ -1,11 +1,39 @@
 {
   "Version": 1,
-  "Hash": "IpR4pnex3cjpwqnVSqnQq8mTie//yB8LHwzdbm075kM=",
+  "Hash": "0mZzJiqQ2qLHmCbmJ8kBxvJnVFi+N9eF7jdB1hDnc7o=",
   "Source": "EProject_Sem_3",
   "BasePath": "_content/EProject_Sem_3",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
-  "Assets": []
+  "DiscoveryPatterns": [
+    {
+      "Name": "EProject_Sem_3\\wwwroot",
+      "Source": "EProject_Sem_3",
+      "ContentRoot": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\wwwroot\\",
+      "BasePath": "_content/EProject_Sem_3",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\wwwroot\\images\\users\\admin.jpg",
+      "SourceId": "EProject_Sem_3",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\wwwroot\\",
+      "BasePath": "_content/EProject_Sem_3",
+      "RelativePath": "images/users/admin.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\users\\admin.jpg"
+    }
+  ]
 }

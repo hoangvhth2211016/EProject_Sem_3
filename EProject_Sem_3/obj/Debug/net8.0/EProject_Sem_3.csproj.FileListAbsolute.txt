@@ -141,3 +141,6 @@ D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.sourcelink.json
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.xml
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.xml
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.staticwebassets.runtime.json
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\CloudinaryDotNet.dll
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Newtonsoft.Json.dll

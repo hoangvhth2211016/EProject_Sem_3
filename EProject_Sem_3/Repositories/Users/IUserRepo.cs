@@ -18,6 +18,8 @@ public interface IUserRepo {
     Task<User> UpdateUser(User user, UserUpdateDto dto);
 
     Task ChangePassword(User user, ChangePasswordDto dto);
+    
+    Task<string> UpdateAvatar(User user, IFormFile avatar);
 
-
+    Task DeleteAvatar(User user);
 }

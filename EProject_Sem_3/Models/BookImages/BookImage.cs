@@ -10,6 +10,8 @@ namespace EProject_Sem_3.Models.BookImages {
         [Required]
         public required string Image { get; set; }
 
+        public string? Name { get; set; }
+
         public required Book Book { get; set; }
     }
 }
