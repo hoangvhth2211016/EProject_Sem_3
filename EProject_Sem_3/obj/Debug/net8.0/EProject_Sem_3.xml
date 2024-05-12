@@ -39,14 +39,14 @@
             get plan by id
             </summary>
         </member>
-        <member name="M:EProject_Sem_3.Controllers.RecipesController.GetAllForPublic">
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.GetAllForPublic(EProject_Sem_3.Models.PaginationReq)">
             <summary>
             get all recipes for public page except the candidate. Candidate recipes should be separated to another route.
             </summary>
         </member>
-        <member name="M:EProject_Sem_3.Controllers.RecipesController.GetAllFromAdmin(System.String)">
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.GetAllForAdmin(System.String,EProject_Sem_3.Models.PaginationReq)">
             <summary>
-            get all recipes from admin, which mean, only recipes with type of free or premium
+            get all recipes, either from "Admin" or "User", otherwise return all recipes from the stores for testing purpose
             </summary>
         </member>
         <member name="M:EProject_Sem_3.Controllers.RecipesController.GetById(System.Int32)">
@@ -54,9 +54,9 @@
             get recipe by id, accept access for all user but with conditions to view
             </summary>
         </member>
-        <member name="M:EProject_Sem_3.Controllers.RecipesController.CreateAsUser(EProject_Sem_3.Models.Recipes.RecipeCreateDto)">
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.CreateAdminRecipe(EProject_Sem_3.Models.Recipes.RecipeCreateDto)">
             <summary>
-            create recipe
+            create recipe as Admin
             </summary>
         </member>
         <member name="M:EProject_Sem_3.Controllers.RecipesController.UpdateRecipe(System.Int32,EProject_Sem_3.Models.Recipes.RecipeUpdateDto)">
@@ -69,12 +69,17 @@
             reward user's recipe, change from candidate to user
             </summary>
         </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.DeleteRecipe(System.Int32)">
+            <summary>
+            delete recipe
+            </summary>
+        </member>
         <member name="M:EProject_Sem_3.Controllers.UsersController.GetCurrentUser">
             <summary>
             get current user information
             </summary>
         </member>
-        <member name="M:EProject_Sem_3.Controllers.UsersController.GetAll">
+        <member name="M:EProject_Sem_3.Controllers.UsersController.GetAll(EProject_Sem_3.Models.PaginationReq)">
             <summary>
             get all users, only for admin
             </summary>
@@ -94,9 +99,14 @@
             Change user Password
             </summary>
         </member>
-        <member name="M:EProject_Sem_3.Controllers.UsersController.GetRecipesFromCurrentUser">
+        <member name="M:EProject_Sem_3.Controllers.UsersController.GetRecipesFromCurrentUser(EProject_Sem_3.Models.PaginationReq)">
             <summary>
             Get Current User Recipes
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.CreateUserRecipe(EProject_Sem_3.Models.Recipes.RecipeCreateDto)">
+            <summary>
+            Create Recipe as User
             </summary>
         </member>
         <member name="M:EProject_Sem_3.Controllers.UsersController.UpdateRecipe(System.Int32,EProject_Sem_3.Models.Recipes.RecipeUpdateDto)">
@@ -126,6 +136,18 @@
             <inheritdoc />
         </member>
         <member name="M:EProject_Sem_3.Migrations.Update_Plan_Table.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.InitialCreate">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.InitialCreate.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.InitialCreate.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.InitialCreate.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
         <member name="T:EProject_Sem_3.Migrations.update_user_table">
@@ -162,6 +184,42 @@
             <inheritdoc />
         </member>
         <member name="M:EProject_Sem_3.Migrations.updaterecipetable.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.TestDatabaseNameChange">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.TestDatabaseNameChange.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.TestDatabaseNameChange.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.TestDatabaseNameChange.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.Update3">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.Update3.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.Update3.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.Update3.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.Update4">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.Update4.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.Update4.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.Update4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using EProject_Sem_3.Models;
 
 namespace EProject_Sem_3.Controllers {
     [Route("api/[controller]")]
@@ -38,8 +39,8 @@ namespace EProject_Sem_3.Controllers {
         /// </summary>
         [Authorize(Roles = "Admin")]
         [HttpGet]
-        public async Task<IActionResult> GetAll() {
-            return Ok(await userRepo.FindAll());
+        public async Task<IActionResult> GetAll([FromQuery] PaginationReq pageReq) {
+            return Ok(await userRepo.FindAll(pageReq));
         }
 
 
@@ -80,11 +81,27 @@ namespace EProject_Sem_3.Controllers {
         /// </summary>
         [Authorize]
         [HttpGet("Recipes")]
-        public async Task<IActionResult> GetRecipesFromCurrentUser() {
+        public async Task<IActionResult> GetRecipesFromCurrentUser([FromQuery] PaginationReq pageReq) {
             var username = User.Identity.Name;
-            return Ok(await recipeRepo.FindAll("self", username));
+            var query = recipeRepo.FromSelf(username);
+            var totalRecords = await recipeRepo.CountRecord(query);
+            var list = await recipeRepo.ProcessPage(pageReq,query);
+            return  Ok(new PaginationRes<RecipeCardRes>(pageReq.PageNo, pageReq.PerPage, totalRecords, list));
         }
 
+        /// <summary>
+        /// Create Recipe as User
+        /// </summary>
+        [Authorize(Roles = "User")]
+        [HttpPost("Recipes")]
+        public async Task<IActionResult> CreateUserRecipe(RecipeCreateDto dto) {
+            dto.Type = RecipeType.candidate;
+            var id = Convert.ToInt16(User.FindFirst("Id")?.Value);
+            dto.UserId = id;
+            await recipeRepo.Create(dto);
+            return Ok("Recipe created");
+        }
+        
         /// <summary>
         /// Update User Recipe, can only be change when recipe's type is still candidate
         /// </summary>

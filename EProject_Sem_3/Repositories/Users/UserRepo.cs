@@ -26,7 +26,7 @@ public class UserRepo : IUserRepo {
     public async Task Register(RegisterDto dto) {
 
         // check if plan exist
-        if (await context.Plans.AnyAsync(p => p.Id == dto.planId)) throw new NotFoundException("Plan not found");
+        if (!(await context.Plans.AnyAsync(p => p.Id == dto.PlanId))) throw new NotFoundException("Plan not found");
 
         //Map user
         User newUser = mapper.Map<User>(dto);
@@ -41,7 +41,7 @@ public class UserRepo : IUserRepo {
 
         // create a new subscription
         Subscription newSub = new() {
-            PlanId = dto.planId,
+            PlanId = dto.PlanId,
             UserId = entity.Id,
             ExpiredAt = DateTime.Now.AddMonths(6)
         };
@@ -67,8 +67,17 @@ public class UserRepo : IUserRepo {
         return user ?? throw new NotFoundException("User not found");
     }
 
-    public async Task<List<User>> FindAll() {
-        return await context.Users.ToListAsync();
+    public async Task<PaginationRes<User>> FindAll(PaginationReq pageReq) {
+        
+        var user = await context.Users
+            .OrderBy(u => u.Id)
+            .Skip((pageReq.PageNo - 1) * pageReq.PerPage)
+            .Take(pageReq.PerPage)
+            .ToListAsync();
+
+        var totalRecords = await context.Users.CountAsync();
+
+        return new PaginationRes<User>(pageReq.PageNo, pageReq.PerPage, totalRecords, user);
     }
 
     public async Task<object?> FindById(int id) {
