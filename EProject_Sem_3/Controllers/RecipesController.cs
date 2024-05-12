@@ -1,4 +1,6 @@
-﻿using EProject_Sem_3.Models.Recipes;
+﻿using System.ComponentModel.DataAnnotations;
+using EProject_Sem_3.Models;
+using EProject_Sem_3.Models.Recipes;
 using EProject_Sem_3.Models.Users;
 using EProject_Sem_3.Repositories.Recipes;
 using EProject_Sem_3.Repositories.Users;
@@ -23,18 +25,36 @@ namespace EProject_Sem_3.Controllers {
         /// get all recipes for public page except the candidate. Candidate recipes should be separated to another route.
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> GetAllForPublic() {
-            return Ok(await recipeRepo.FindAll("public"));
+        public async Task<IActionResult> GetAllForPublic([FromQuery] PaginationReq pageReq) {
+            var query = recipeRepo.ForPublic();
+            var totalRecords = await recipeRepo.CountRecord(query);
+            var list = await recipeRepo.ProcessPage(pageReq,query);
+            return  Ok(new PaginationRes<RecipeCardRes>(pageReq.PageNo, pageReq.PerPage, totalRecords, list));
         }
 
 
         /// <summary>
-        /// get all recipes from admin, which mean, only recipes with type of free or premium
+        /// get all recipes, either from "Admin" or "User", otherwise return all recipes from the stores for testing purpose
         /// </summary>
         [Authorize(Roles = "Admin")]
         [HttpGet("Admin")]
-        public async Task<IActionResult> GetAllFromAdmin(string from) {
-            return Ok(await recipeRepo.FindAll(from));
+        public async Task<IActionResult> GetAllForAdmin([FromQuery]string? from, [FromQuery] PaginationReq pageReq) {
+            IQueryable<Recipe> query;
+            if (from == "Admin")
+            {
+                query = recipeRepo.FromAdmin();
+            }
+            else if(from == "User")
+            {
+                query = recipeRepo.FromUser();
+            }
+            else
+            {
+                return Ok(await recipeRepo.FindAll());
+            }
+            var totalRecords = await recipeRepo.CountRecord(query);
+            var list = await recipeRepo.ProcessPage(pageReq,query);
+            return  Ok(new PaginationRes<RecipeCardRes>(pageReq.PageNo, pageReq.PerPage, totalRecords, list));
         }
 
 
@@ -52,25 +72,14 @@ namespace EProject_Sem_3.Controllers {
 
 
         /// <summary>
-        /// create recipe
+        /// create recipe as Admin
         /// </summary>
-        [Authorize]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> CreateAsUser(RecipeCreateDto dto) {
-            var role = User.FindFirst("Role")?.Value;
-            switch (role) {
-                case "Admin":
-                    string type = dto.Type.ToString();
-                    if ((type != "free") && (type != "premium")) {
-                        return BadRequest("invalid recipe type");
-                    }
-                    break;
-                case "User":
-                    dto.Type = RecipeType.candidate;
-                    break;
-                default:
-                    return Unauthorized();
-            }
+        public async Task<IActionResult> CreateAdminRecipe(RecipeCreateDto dto) {
+            if (((dto.Type != RecipeType.free)) && (dto.Type !=RecipeType.premium)) { 
+                return BadRequest("invalid recipe type");
+            }                       
             var id = Convert.ToInt16(User.FindFirst("Id")?.Value);
             dto.UserId = id;
             await recipeRepo.Create(dto);
@@ -99,7 +108,9 @@ namespace EProject_Sem_3.Controllers {
             return isRewarded ? Ok("Recipe rewarded") : BadRequest("Recipe is unable to reward or already rewarded");
         }
 
-
+        /// <summary>
+        /// delete recipe
+        /// </summary>
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRecipe(int id) {

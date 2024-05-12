@@ -25,35 +25,9 @@ namespace EProject_Sem_3.Repositories.Recipes {
         }
 
 
-        // find recipes with scenarios
-        public async Task<ICollection<object>> FindAll(string flag, string username = null) {
-            var query = context.Recipes.AsQueryable();
-
-            if (flag == "public") {
-                query = query.Where(r => r.Type != RecipeType.candidate);
-            }
-            else if (flag == "admin") {
-                query = query.Where(r => r.UserId == 1);
-            }
-            else if (flag == "user") {
-                query = query.Where(r => r.Type == RecipeType.winner || r.Type == RecipeType.candidate);
-            }
-            else if (username != null && flag == "self") {
-                query = query.Where(r => r.User.Username == username);
-
-            }
-
-            return await query
-                .Select(r => new {
-                    r.Id,
-                    r.UserId,
-                    r.CreatedAt,
-                    r.UpdatedAt,
-                    r.Title,
-                    r.Type,
-                    r.Thumbnail
-                })
-                .ToListAsync<object>();
+        // find all recipes
+        public async Task<ICollection<Recipe>> FindAll() {
+            return await context.Recipes.ToListAsync();
         }
 
         // find by recipe id with scenario
@@ -75,9 +49,13 @@ namespace EProject_Sem_3.Repositories.Recipes {
             return recipe == null ? throw new NotFoundException("Recipe not found") : mapper.Map<RecipeRes>(recipe);
         }
 
+        public async Task<Recipe> FindByIdBase(int id) {
+            return await context.Recipes.FirstOrDefaultAsync(r => r.Id == id) ?? throw new NotFoundException("Recipe Not Found");
+        }
+
         public async Task<bool> RewardRecipe(int id) {
-            var recipe = await FindById(id);
-            if (!recipe.Type.Equals(RecipeType.candidate)) {
+            var recipe = await FindByIdBase(id);
+            if (recipe.Type != RecipeType.candidate) {
                 return false;
             }
             recipe.Type = RecipeType.winner;
@@ -86,7 +64,7 @@ namespace EProject_Sem_3.Repositories.Recipes {
         }
 
         public async Task UpdateRecipe(int id, RecipeUpdateDto dto) {
-            var recipe = await FindById(id);
+            var recipe = await FindByIdBase(id);
             if (recipe.Type.Equals(RecipeType.winner)) {
                 return;
             }
@@ -96,9 +74,57 @@ namespace EProject_Sem_3.Repositories.Recipes {
 
 
         public async Task DeleteRecipe(int id) {
-            var recipe = await FindById(id);
+            var recipe = await FindByIdBase(id);
             context.Remove(recipe);
             await context.SaveChangesAsync();
         }
+
+
+
+        public async Task<ICollection<RecipeCardRes>> ProcessPage(PaginationReq pageReq, IQueryable<Recipe> query) {
+            var list = await query
+                .OrderBy(r => r.Id)
+                .Skip((pageReq.PageNo - 1) * pageReq.PerPage)
+                .Take(pageReq.PerPage)
+                .Select(r => new RecipeCardRes {
+                    Id = r.Id,
+                    UserId = r.UserId,
+                    CreatedAt = r.CreatedAt,
+                    UpdatedAt = r.UpdatedAt,
+                    Title = r.Title,
+                    Type = r.Type,
+                    Thumbnail = r.Thumbnail
+                })
+                .ToListAsync();
+
+            return list;
+        }
+        
+        
+
+        public IQueryable<Recipe> FromAdmin() {
+            return context.Recipes.Include(r => r.User).Where(r => r.User.Role.Equals(Role.Admin));
+        }
+
+        public IQueryable<Recipe> FromUser() {
+            return context.Recipes.Include(r => r.User).Where(r => r.User.Role.Equals(Role.User));
+        }
+
+        public IQueryable<Recipe> ForPublic() {
+            return context.Recipes.Where(r => !r.Type.Equals(RecipeType.candidate));
+        }
+
+        public IQueryable<Recipe> ForPublicWithSort(RecipeType type) {
+            return context.Recipes.Where(r => r.Type.Equals(type));
+        }
+
+        public IQueryable<Recipe> FromSelf(string username) {
+            return context.Recipes.Include(r => r.User).Where(r => r.User.Username == username);
+        }
+
+        public async Task<int> CountRecord(IQueryable<Recipe> query) {
+            return await query.CountAsync();
+        }
+        
     }
 }
