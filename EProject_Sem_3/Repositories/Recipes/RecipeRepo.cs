@@ -82,7 +82,8 @@ namespace EProject_Sem_3.Repositories.Recipes {
             }
             mapper.Map(dto, recipe);
             await context.SaveChangesAsync();
-            await recipeImageRepo.Create(recipe, dto.Files);
+            if(!dto.Files.IsNullOrEmpty())
+                await recipeImageRepo.Create(recipe, dto.Files);
         }
 
 
