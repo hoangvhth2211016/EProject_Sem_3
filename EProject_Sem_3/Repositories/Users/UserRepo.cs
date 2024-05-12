@@ -124,7 +124,7 @@ public class UserRepo : IUserRepo {
 
     public async Task DeleteAvatar(User user) {
         user.Avatar = null;
-        await fileService.Delete(user.Username);
+        await fileService.Delete("users/" + user.Username);
         await context.SaveChangesAsync();
     }
 }

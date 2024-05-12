@@ -36,7 +36,9 @@ public class ImageService : IFileService
     }
 
     public async Task Delete(string name) {
-        await cloudinary.DestroyAsync(new DeletionParams(name));
+        await cloudinary.DestroyAsync(new DeletionParams(rootFolder + name) {
+            ResourceType = ResourceType.Image
+        });
     }
 
 

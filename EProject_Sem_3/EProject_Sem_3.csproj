@@ -27,4 +27,8 @@
 	  <_ContentIncludedByDefault Remove="wwwroot\images\users\admin.jpg" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="wwwroot\" />
+	</ItemGroup>
+
 </Project>

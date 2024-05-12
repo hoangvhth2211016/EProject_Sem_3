@@ -37,7 +37,7 @@ public class RecipeImageRepo : IRecipeImageRepo
             var recipeImageCreateDto = new RecipeImageCreateDto() {
                 RecipeId = recipe.Id,
                 Image = url,
-                Name = name
+                Name = "recipes/"+name
             };
             await context.RecipeImages.AddAsync(mapper.Map<RecipeImage>(recipeImageCreateDto));
         }
