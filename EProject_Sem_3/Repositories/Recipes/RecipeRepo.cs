@@ -3,7 +3,9 @@ using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Recipes;
 using EProject_Sem_3.Models.Users;
+using EProject_Sem_3.Repositories.RecipeImages;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 namespace EProject_Sem_3.Repositories.Recipes {
     public class RecipeRepo : IRecipeRepo {
@@ -12,16 +14,24 @@ namespace EProject_Sem_3.Repositories.Recipes {
 
         private readonly IMapper mapper;
 
-        public RecipeRepo(AppDbContext context, IMapper mapper) {
+        private readonly IRecipeImageRepo recipeImageRepo;
+
+        public RecipeRepo(AppDbContext context, IMapper mapper, IRecipeImageRepo recipeImageRepo) {
             this.context = context;
             this.mapper = mapper;
+            this.recipeImageRepo = recipeImageRepo;
         }
 
         // create Recipe
         public async Task Create(RecipeCreateDto dto) {
             Recipe recipe = mapper.Map<Recipe>(dto);
-            await context.Recipes.AddAsync(recipe);
+            var entityEntry = await context.Recipes.AddAsync(recipe);
             await context.SaveChangesAsync();
+            if (!dto.Files.IsNullOrEmpty())
+            {
+                var newRecipe = entityEntry.Entity;
+                await recipeImageRepo.Create(newRecipe, dto.Files);
+            }
         }
 
 
@@ -33,7 +43,9 @@ namespace EProject_Sem_3.Repositories.Recipes {
         // find by recipe id with scenario
         public async Task<RecipeRes> FindById(int id, string? role = null) {
 
-            var query = context.Recipes.Where(r => id == r.Id);
+            var query = context.Recipes
+                .Include(r => r.Images)
+                .Where(r => id == r.Id);
 
             if (role == "Anomymous") {
                 // If role is not specified (free user) then user can only view free recipes
@@ -70,6 +82,7 @@ namespace EProject_Sem_3.Repositories.Recipes {
             }
             mapper.Map(dto, recipe);
             await context.SaveChangesAsync();
+            await recipeImageRepo.Create(recipe, dto.Files);
         }
 
 
@@ -122,9 +135,18 @@ namespace EProject_Sem_3.Repositories.Recipes {
             return context.Recipes.Include(r => r.User).Where(r => r.User.Username == username);
         }
 
+
         public async Task<int> CountRecord(IQueryable<Recipe> query) {
             return await query.CountAsync();
         }
         
+        public async Task DeleteRecipeImageById(int recipeId, int imageId) {
+            var isImageExist = await context.RecipeImages
+                .AnyAsync(r => r.RecipeId == recipeId && r.Id == imageId);
+            if (isImageExist)
+            {
+                await recipeImageRepo.Delete(imageId);
+            }
+        }
     }
 }

@@ -74,6 +74,11 @@
             delete recipe
             </summary>
         </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.DeleteRecipe(System.Int32,System.Int32)">
+            <summary>
+            delete recipe image
+            </summary>
+        </member>
         <member name="M:EProject_Sem_3.Controllers.UsersController.GetCurrentUser">
             <summary>
             get current user information
@@ -112,6 +117,16 @@
         <member name="M:EProject_Sem_3.Controllers.UsersController.UpdateRecipe(System.Int32,EProject_Sem_3.Models.Recipes.RecipeUpdateDto)">
             <summary>
             Update User Recipe, can only be change when recipe's type is still candidate
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.UpdateAvatar(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Update User Avatar
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.DeleteAvatar">
+            <summary>
+            Delete User Avatar
             </summary>
         </member>
         <member name="T:EProject_Sem_3.Migrations.Init">
@@ -220,6 +235,18 @@
             <inheritdoc />
         </member>
         <member name="M:EProject_Sem_3.Migrations.Update4.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.UpdateImageModel">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.UpdateImageModel.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.UpdateImageModel.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.UpdateImageModel.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

@@ -111,5 +111,30 @@ namespace EProject_Sem_3.Controllers {
             await recipeRepo.UpdateRecipe(id, dto);
             return Ok("recipe updated");
         }
+        
+        /// <summary>
+        /// Update User Avatar
+        /// </summary>
+        [Authorize]
+        [HttpPatch("Avatars")]
+        public async Task<IActionResult> UpdateAvatar(IFormFile avatar) {
+            var username = User.Identity.Name;
+            var user = await userRepo.FindByUsername(username);
+            var url = await userRepo.UpdateAvatar(user, avatar);
+            return Ok(url);
+        }
+        
+          
+        /// <summary>
+        /// Delete User Avatar
+        /// </summary>
+        [Authorize]
+        [HttpDelete("Avatars")]
+        public async Task<IActionResult> DeleteAvatar() {
+            var username = User.Identity.Name;
+            var user = await userRepo.FindByUsername(username);
+            await userRepo.DeleteAvatar(user);
+            return Ok("Avatar deleted");
+        }
     }
 }

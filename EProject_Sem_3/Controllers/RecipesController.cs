@@ -117,5 +117,16 @@ namespace EProject_Sem_3.Controllers {
             await recipeRepo.DeleteRecipe(id);
             return Ok("Recipe deleted");
         }
+        
+        /// <summary>
+        /// delete recipe image
+        /// </summary>
+        [Authorize]
+        [HttpDelete("{recipeId}/Images/{imageId}")]
+        public async Task<IActionResult> DeleteRecipe(int recipeId, int imageId) {
+            await recipeRepo.DeleteRecipeImageById(recipeId, imageId);
+            return Ok("Recipe image deleted");
+        }
+        
     }
 }

@@ -4,6 +4,7 @@ using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Subscriptions;
 using EProject_Sem_3.Models.Users;
+using EProject_Sem_3.Services.FileService;
 using EProject_Sem_3.Services.TokenService;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,10 +18,13 @@ public class UserRepo : IUserRepo {
 
     private readonly IMapper mapper;
 
-    public UserRepo(AppDbContext context, ITokenService tokenService, IMapper mapper) {
+    private readonly IFileService fileService;
+
+    public UserRepo(AppDbContext context, ITokenService tokenService, IMapper mapper, IFileService fileService) {
         this.context = context;
         this.tokenService = tokenService;
         this.mapper = mapper;
+        this.fileService = fileService;
     }
 
     public async Task Register(RegisterDto dto) {
@@ -103,6 +107,24 @@ public class UserRepo : IUserRepo {
                 user.Password,
                 dto.NewPassword
             );
+        await context.SaveChangesAsync();
+    }
+
+    public async Task<string> UpdateAvatar(User user, IFormFile avatar) {
+        var fileModel = new FileModel() {
+            Path = "users", 
+            Name = user.Username, 
+            File = avatar
+        };
+        var url = await fileService.Upload(fileModel);
+        user.Avatar = url;
+        await context.SaveChangesAsync();
+        return url;
+    }
+
+    public async Task DeleteAvatar(User user) {
+        user.Avatar = null;
+        await fileService.Delete(user.Username);
         await context.SaveChangesAsync();
     }
 }

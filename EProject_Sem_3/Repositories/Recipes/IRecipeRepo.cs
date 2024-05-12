@@ -32,5 +32,6 @@ namespace EProject_Sem_3.Repositories.Recipes {
 
         IQueryable<Recipe> FromSelf(string username);
 
+        Task DeleteRecipeImageById(int recipeId, int imageId);
     }
 }
