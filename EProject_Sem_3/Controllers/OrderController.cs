@@ -33,9 +33,9 @@ public class OrderController : ControllerBase
     //get all orders
     [HttpGet]
     [Authorize(Roles = "Admin")]
-    public async Task<IActionResult> GetAllOrders([FromQuery] PaginationReq page)
+    public async Task<IActionResult> GetAllOrders([FromQuery] PaginationReq pageReq)
     {
-        return Ok(await _orderRepo.GetAllOrders(page.PageNo,page.PerPage));
+        return Ok(await _orderRepo.GetAllOrders(pageReq));
     }
     
     //get order

@@ -7,7 +7,7 @@ namespace EProject_Sem_3.Repositories.Orders;
 public interface IOrderRepo
 {
 
-    Task<PaginationRes<OrderRes>> GetAllOrders(int page, int pageSize);
+    Task<PaginationRes<OrderRes>> GetAllOrders(PaginationReq pageReq);
 
     Task<OrderRes> GetOrder(int orderId);
     
