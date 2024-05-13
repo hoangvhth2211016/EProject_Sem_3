@@ -4,6 +4,7 @@ using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Subscriptions;
 using EProject_Sem_3.Models.Users;
+using EProject_Sem_3.Services.FileService;
 using EProject_Sem_3.Services.TokenService;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,10 +18,13 @@ public class UserRepo : IUserRepo {
 
     private readonly IMapper mapper;
 
-    public UserRepo(AppDbContext context, ITokenService tokenService, IMapper mapper) {
+    private readonly IFileService fileService;
+
+    public UserRepo(AppDbContext context, ITokenService tokenService, IMapper mapper, IFileService fileService) {
         this.context = context;
         this.tokenService = tokenService;
         this.mapper = mapper;
+        this.fileService = fileService;
     }
 
     public async Task<User> Register(RegisterDto dto) {
@@ -64,8 +68,17 @@ public class UserRepo : IUserRepo {
         return user ?? throw new NotFoundException("User not found");
     }
 
-    public async Task<List<User>> FindAll() {
-        return await context.Users.ToListAsync();
+    public async Task<PaginationRes<User>> FindAll(PaginationReq pageReq) {
+        
+        var user = await context.Users
+            .OrderBy(u => u.Id)
+            .Skip((pageReq.PageNo - 1) * pageReq.PerPage)
+            .Take(pageReq.PerPage)
+            .ToListAsync();
+
+        var totalRecords = await context.Users.CountAsync();
+
+        return new PaginationRes<User>(pageReq.PageNo, pageReq.PerPage, totalRecords, user);
     }
 
     public async Task<object?> FindById(int id) {
@@ -105,5 +118,23 @@ public class UserRepo : IUserRepo {
         userCurrent.IsActivated = true;
         await context.SaveChangesAsync();
 
+    }
+
+    public async Task<string> UpdateAvatar(User user, IFormFile avatar) {
+        var fileModel = new FileModel() {
+            Path = "users", 
+            Name = user.Username, 
+            File = avatar
+        };
+        var url = await fileService.Upload(fileModel);
+        user.Avatar = url;
+        await context.SaveChangesAsync();
+        return url;
+    }
+
+    public async Task DeleteAvatar(User user) {
+        user.Avatar = null;
+        await fileService.Delete("users/" + user.Username);
+        await context.SaveChangesAsync();
     }
 }
