@@ -23,12 +23,12 @@ public class OrderRepo : IOrderRepo
         _mapper = mapper;
     }
 
-    public async Task<PageOrderRes> GetAllOrders(int page, int pageSize)
+    public async Task<PaginationRes<OrderRes>> GetAllOrders(int page, int perPage)
     { 
        
         var orders = await _context.Orders
-            .Skip((page - 1) * pageSize)
-            .Take(pageSize)
+            .Skip((page-1) * perPage)
+            .Take(perPage)
             .ToListAsync();
         
         
@@ -61,18 +61,9 @@ public class OrderRepo : IOrderRepo
 
         // list Orders --> PageOrder
         var totalOrders = await _context.Orders.CountAsync();
-        var lastPage = (int)Math.Ceiling((double)totalOrders / pageSize);
-        
-        var pageOrderRes = new PageOrderRes
-        {
-            Orders = _mapper.Map<List<OrderRes>>(orders),
-            Page = page,
-            LastPage = lastPage,
-            TotalOrders = totalOrders,
-            PerPage = pageSize
-        };
 
-        return pageOrderRes;
+        return new PaginationRes<OrderRes>(page, perPage, totalOrders, _mapper.Map<List<OrderRes>>(orders));
+        
     }
     
     public async Task<OrderRes> GetOrder(int orderId)
