@@ -61,16 +61,15 @@ public class OrderController : ControllerBase
         
         
         // create payment url
-        var vnPayModel = new VnPaymentRequestModel
+        var vnPayModel = new VnPaymentOrderRequestModel()
         {
             TotalAmount = dto.TotalAmount,
-            CreatedDate = DateTime.Now,
             OrderId = order.Id,
             Phone = order.Phone
         };
         
         // return url
-        return Ok(_vnPayService.CreatePaymentUrl(HttpContext, vnPayModel));
+        return Ok(_vnPayService.CreatePaymentUrlForOrder(HttpContext, vnPayModel));
         
     }
     
