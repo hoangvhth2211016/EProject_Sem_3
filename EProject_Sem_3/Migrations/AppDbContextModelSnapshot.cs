@@ -40,6 +40,9 @@ namespace EProject_Sem_3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("UpdatedAt")
                         .HasColumnType("datetime2");
 
@@ -262,6 +265,10 @@ namespace EProject_Sem_3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("RecipeId")
                         .HasColumnType("int");
 
@@ -418,7 +425,7 @@ namespace EProject_Sem_3.Migrations
                             Email = "admin@gmail.com",
                             IsActivated = true,
                             Name = "admin",
-                            Password = "$2a$11$9JSWnnzdbkmGPKcUdM19/eAUgmzy2gP3qgnY2hX0PfclCMxV3pBV2",
+                            Password = "$2a$11$7AKBMODhuv1M1yJQU.smvup/6kqgh66Y/Fiqtxw0MxML08a96dbkO",
                             Role = 0,
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "admin"

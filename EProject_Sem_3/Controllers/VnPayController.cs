@@ -6,6 +6,7 @@ using EProject_Sem_3.Repositories.Orders;
 using EProject_Sem_3.Repositories.OrdersDetail;
 using EProject_Sem_3.Repositories.Users;
 using EProject_Sem_3.Services.VnpayService;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 
 namespace EProject_Sem_3.Controllers;
@@ -79,15 +80,16 @@ public class VnPayController : ControllerBase
             throw new BadRequestException("Payment Fail");
         }
         
-        // get UserId from response
-        var userId = respronse.Respronse.Substring(1, respronse.Respronse.Length - 5);
+        // get UserId and PlanId from response
         var planId = respronse.Respronse[0];
+        var userId = respronse.Respronse.Substring(1, respronse.Respronse.Length - 6);
+        
         
         // if payment success -> active user, create subscription
-        await _userRepo.ActivateUser(1);
-        await _subscriptionRepo.CreateSubscription(Convert.ToInt32(userId), Convert.ToInt32(planId));
-        
-        
+        await _userRepo.ActivateUser(Convert.ToInt32(userId));
+        await _subscriptionRepo.CreateSubscription(Convert.ToInt32(userId), int.Parse(planId.ToString()));
+
+        // return Ok(userId);
         return Ok("Payment Success! userId: " + userId + " - planId: "+ planId);
 
     }

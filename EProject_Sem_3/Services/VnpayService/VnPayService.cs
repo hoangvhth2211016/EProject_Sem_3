@@ -14,7 +14,7 @@ public class VnPayService : IVnPayService
         _config = configuration;
     }
 
-    public string CreatePaymentUrlForOrder(HttpContext context, VnPaymentOrderRequestModel model)
+    public string CreatePaymentUrlForOrder( VnPaymentOrderRequestModel model)
     {
         var vnPaymentRequest = new VnPaymentRequest();
         vnPaymentRequest.Amount = (model.TotalAmount * 100).ToString();
@@ -23,22 +23,22 @@ public class VnPayService : IVnPayService
         vnPaymentRequest.TxnRef = model.OrderId.ToString() + new Random().Next(10000, 99999);
 
 
-        return CreatePaymentUrl(context, vnPaymentRequest);
+        return CreatePaymentUrl(vnPaymentRequest);
     }
     
-    public string CreatePaymentUrlForSubscription(HttpContext context, VnPaymentSubscriptionRequestModel model)
+    public string CreatePaymentUrlForSubscription( VnPaymentSubscriptionRequestModel model)
     {
         var vnPaymentRequest = new VnPaymentRequest();
         vnPaymentRequest.Amount = (model.TotalAmount * 100).ToString();
         vnPaymentRequest.ReturnUrl = "http://localhost:5180/api/VnPay/PaymentCallBackForSubscription";
         vnPaymentRequest.OrderInfo = "Đăng ký thành viên: " + model.UserId + " - " + model.PlanId ;
-        vnPaymentRequest.TxnRef = model.UserId + model.PlanId.ToString() + new Random().Next(10000, 99999);
+        vnPaymentRequest.TxnRef =  model.PlanId.ToString() + model.UserId + new Random().Next(10000, 99999);
 
 
-        return CreatePaymentUrl(context, vnPaymentRequest);
+        return CreatePaymentUrl( vnPaymentRequest);
     }
     
-    public string CreatePaymentUrl(HttpContext context, VnPaymentRequest model)
+    public string CreatePaymentUrl( VnPaymentRequest model)
     {
         
        

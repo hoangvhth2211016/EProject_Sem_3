@@ -10,7 +10,9 @@ using EProject_Sem_3.Repositories.Recipes;
 using EProject_Sem_3.Repositories.Books;
 using EProject_Sem_3.Repositories.Orders;
 using EProject_Sem_3.Repositories.OrdersDetail;
+using EProject_Sem_3.Repositories.RecipeImages;
 using EProject_Sem_3.Repositories.Users;
+using EProject_Sem_3.Services.FileService;
 using EProject_Sem_3.Services.TokenService;
 using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
@@ -28,6 +30,15 @@ builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
+// add Cors
+builder.Services.AddCors(options => {
+    options.AddPolicy("ApiPolicy", p => {
+        p.AllowAnyOrigin();
+        p.AllowAnyHeader();
+        p.AllowAnyMethod();
+    });
+});
 
 // add db context
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
@@ -96,6 +107,7 @@ builder.Services.AddScoped<IUserRepo, UserRepo>();
 builder.Services.AddScoped<IPlanRepo, PlanRepo>();
 builder.Services.AddScoped<IFeedbackRepo, FeedbackRepo>();
 builder.Services.AddScoped<IRecipeRepo, RecipeRepo>();
+builder.Services.AddScoped<IRecipeImageRepo, RecipeImageRepo>();
 builder.Services.AddScoped<IBookRepo, BookRepo>();
 builder.Services.AddScoped<IOrderRepo, OrderRepo>();
 builder.Services.AddScoped<IOrderDetailRepo, OrderDetailRepo>();
@@ -105,6 +117,7 @@ builder.Services.AddScoped<ISubscriptionRepo, SubscriptionRepo>();
 // add custom services
 builder.Services.AddSingleton<ITokenService, TokenService>();
 builder.Services.AddSingleton<IVnPayService, VnPayService>();
+builder.Services.AddSingleton<IFileService, ImageService>();
 
 var app = builder.Build();
 
@@ -116,6 +129,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("ApiPolicy");
 
 app.UseAuthentication();
 

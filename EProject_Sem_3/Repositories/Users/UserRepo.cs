@@ -4,6 +4,7 @@ using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Subscriptions;
 using EProject_Sem_3.Models.Users;
+using EProject_Sem_3.Services.FileService;
 using EProject_Sem_3.Services.TokenService;
 using Microsoft.EntityFrameworkCore;
 
@@ -17,16 +18,19 @@ public class UserRepo : IUserRepo {
 
     private readonly IMapper mapper;
 
-    public UserRepo(AppDbContext context, ITokenService tokenService, IMapper mapper) {
+    private readonly IFileService fileService;
+
+    public UserRepo(AppDbContext context, ITokenService tokenService, IMapper mapper, IFileService fileService) {
         this.context = context;
         this.tokenService = tokenService;
         this.mapper = mapper;
+        this.fileService = fileService;
     }
 
-    public async Task Register(RegisterDto dto) {
+    public async Task<User> Register(RegisterDto dto) {
 
         // check if plan exist
-        if (await context.Plans.AnyAsync(p => p.Id == dto.planId)) throw new NotFoundException("Plan not found");
+        if (!(await context.Plans.AnyAsync(p => p.Id == dto.PlanId))) throw new NotFoundException("Plan not found");
 
         //Map user
         User newUser = mapper.Map<User>(dto);
@@ -39,21 +43,18 @@ public class UserRepo : IUserRepo {
 
         await context.SaveChangesAsync();
 
-        // create a new subscription
-        Subscription newSub = new() {
-            PlanId = dto.planId,
-            UserId = entity.Id,
-            ExpiredAt = DateTime.Now.AddMonths(6)
-        };
-
-
-        await context.Subscriptions.AddAsync(newSub);
-
-        await context.SaveChangesAsync();
+        return entity;
     }
 
     public async Task<TokenDto> Login(LoginDto dto) {
         var user = await FindByUsername(dto.Username);
+        
+        //check activation 
+        if (!user.IsActivated)
+        {
+            throw new UnauthorizedAccessException("User is not activated");
+        }
+        
         if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password)) {
             throw new BadRequestException("Password incorrect");
         }
@@ -67,8 +68,17 @@ public class UserRepo : IUserRepo {
         return user ?? throw new NotFoundException("User not found");
     }
 
-    public async Task<List<User>> FindAll() {
-        return await context.Users.ToListAsync();
+    public async Task<PaginationRes<User>> FindAll(PaginationReq pageReq) {
+        
+        var user = await context.Users
+            .OrderBy(u => u.Id)
+            .Skip((pageReq.PageNo - 1) * pageReq.PerPage)
+            .Take(pageReq.PerPage)
+            .ToListAsync();
+
+        var totalRecords = await context.Users.CountAsync();
+
+        return new PaginationRes<User>(pageReq.PageNo, pageReq.PerPage, totalRecords, user);
     }
 
     public async Task<object?> FindById(int id) {
@@ -100,10 +110,31 @@ public class UserRepo : IUserRepo {
     public async Task ActivateUser(int userId)
     {
         // find user with userId
-        var userCurrent = await context.Users.FirstOrDefaultAsync(u => u.Id == userId) ??
-                          throw new NotFoundException("User not found");
+        var userCurrent = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        if (userCurrent == null)
+        {
+            throw new NotFoundException("User not found");
+        }
         userCurrent.IsActivated = true;
         await context.SaveChangesAsync();
 
+    }
+
+    public async Task<string> UpdateAvatar(User user, IFormFile avatar) {
+        var fileModel = new FileModel() {
+            Path = "users", 
+            Name = user.Username, 
+            File = avatar
+        };
+        var url = await fileService.Upload(fileModel);
+        user.Avatar = url;
+        await context.SaveChangesAsync();
+        return url;
+    }
+
+    public async Task DeleteAvatar(User user) {
+        user.Avatar = null;
+        await fileService.Delete("users/" + user.Username);
+        await context.SaveChangesAsync();
     }
 }
