@@ -20,7 +20,9 @@ public class OrderController : ControllerBase
     
     private readonly IVnPayService _vnPayService;
 
-    public OrderController(IOrderRepo orderRepo,IOrderDetailRepo orderDetailRepo,IVnPayService vnPayService)
+    public OrderController(IOrderRepo orderRepo,
+                            IOrderDetailRepo orderDetailRepo,
+                            IVnPayService vnPayService)
     {
         _orderDetailRepo = orderDetailRepo;
         _orderRepo = orderRepo;
@@ -59,16 +61,15 @@ public class OrderController : ControllerBase
         
         
         // create payment url
-        var vnPayModel = new VnPaymentRequestModel
+        var vnPayModel = new VnPaymentOrderRequestModel()
         {
             TotalAmount = dto.TotalAmount,
-            CreatedDate = DateTime.Now,
             OrderId = order.Id,
             Phone = order.Phone
         };
         
         // return url
-        return Ok(_vnPayService.CreatePaymentUrl(HttpContext, vnPayModel));
+        return Ok(_vnPayService.CreatePaymentUrlForOrder(vnPayModel));
         
     }
     
@@ -88,4 +89,12 @@ public class OrderController : ControllerBase
         return Ok("The order had been Deleted");
     }
     
+    
+    //get all orders detail
+    [HttpGet("{orderId}/OrdersDetais")]
+    [Authorize(Roles = "Admin")]
+    public async Task<IActionResult> GetAllByOrder(int orderId)
+    {
+        return Ok(await _orderDetailRepo.GetAllByOrder(orderId));
+    }
 }

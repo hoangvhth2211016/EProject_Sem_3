@@ -31,6 +31,8 @@ public class User : BaseEntity {
 
     public string? Country { get; set; }
 
+    public bool IsActivated { get; set; } = false;
+
     public ICollection<Subscription> Subscriptions { get; set; } = [];
 
 }

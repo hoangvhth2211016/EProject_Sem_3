@@ -8,7 +8,9 @@ public class PageOrderRes
 
     public required int Page { get; set; }
 
-    public required int TotalPage { get; set; }
+    public required int LastPage { get; set; }
 
     public required int TotalOrders { get; set; }
+    
+    public required int PerPage { get; set; }
 }
