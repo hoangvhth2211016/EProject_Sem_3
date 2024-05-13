@@ -69,7 +69,7 @@ public class OrderController : ControllerBase
         };
         
         // return url
-        return Ok(_vnPayService.CreatePaymentUrlForOrder(HttpContext, vnPayModel));
+        return Ok(_vnPayService.CreatePaymentUrlForOrder(vnPayModel));
         
     }
     

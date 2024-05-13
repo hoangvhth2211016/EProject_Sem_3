@@ -212,5 +212,17 @@
         <member name="M:EProject_Sem_3.Migrations.v.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
+        <member name="T:EProject_Sem_3.Migrations.update">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.update.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.update.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.update.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
     </members>
 </doc>

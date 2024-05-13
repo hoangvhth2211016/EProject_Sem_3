@@ -17,5 +17,5 @@ public class RegisterDto {
     public required string Username { get; set; }
 
     [Required]
-    public required int planId { get; set; }
+    public required int PlanId { get; set; }
 }

@@ -4,11 +4,11 @@ namespace EProject_Sem_3.Services.VnpayService;
 
 public interface IVnPayService
 {
-    string CreatePaymentUrl(HttpContext context, VnPaymentRequest model);
+    string CreatePaymentUrl( VnPaymentRequest model);
 
     VnPaymentResponseModel PaymentExecute(IQueryCollection collections);
 
-    string CreatePaymentUrlForOrder(HttpContext context, VnPaymentOrderRequestModel model);
+    string CreatePaymentUrlForOrder( VnPaymentOrderRequestModel model);
 
-    string CreatePaymentUrlForSubscription(HttpContext context, VnPaymentSubscriptionRequestModel model);
+    string CreatePaymentUrlForSubscription( VnPaymentSubscriptionRequestModel model);
 }

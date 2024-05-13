@@ -23,10 +23,10 @@ public class UserRepo : IUserRepo {
         this.mapper = mapper;
     }
 
-    public async Task Register(RegisterDto dto) {
+    public async Task<User> Register(RegisterDto dto) {
 
         // check if plan exist
-        if (await context.Plans.AnyAsync(p => p.Id == dto.planId)) throw new NotFoundException("Plan not found");
+        if (!(await context.Plans.AnyAsync(p => p.Id == dto.PlanId))) throw new NotFoundException("Plan not found");
 
         //Map user
         User newUser = mapper.Map<User>(dto);
@@ -39,21 +39,18 @@ public class UserRepo : IUserRepo {
 
         await context.SaveChangesAsync();
 
-        // create a new subscription
-        Subscription newSub = new() {
-            PlanId = dto.planId,
-            UserId = entity.Id,
-            ExpiredAt = DateTime.Now.AddMonths(6)
-        };
-
-
-        await context.Subscriptions.AddAsync(newSub);
-
-        await context.SaveChangesAsync();
+        return entity;
     }
 
     public async Task<TokenDto> Login(LoginDto dto) {
         var user = await FindByUsername(dto.Username);
+        
+        //check activation 
+        if (!user.IsActivated)
+        {
+            throw new UnauthorizedAccessException("User is not activated");
+        }
+        
         if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password)) {
             throw new BadRequestException("Password incorrect");
         }
@@ -100,8 +97,11 @@ public class UserRepo : IUserRepo {
     public async Task ActivateUser(int userId)
     {
         // find user with userId
-        var userCurrent = await context.Users.FirstOrDefaultAsync(u => u.Id == userId) ??
-                          throw new NotFoundException("User not found");
+        var userCurrent = await context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+        if (userCurrent == null)
+        {
+            throw new NotFoundException("User not found");
+        }
         userCurrent.IsActivated = true;
         await context.SaveChangesAsync();
 

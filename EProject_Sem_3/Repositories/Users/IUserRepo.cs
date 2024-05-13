@@ -4,7 +4,7 @@ namespace EProject_Sem_3.Repositories.Users;
 
 public interface IUserRepo {
 
-    Task Register(RegisterDto dto);
+    Task<User> Register(RegisterDto dto);
 
     Task<TokenDto> Login(LoginDto dto);
 
