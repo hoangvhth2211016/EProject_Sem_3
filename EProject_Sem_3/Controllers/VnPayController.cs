@@ -71,12 +71,14 @@ public class VnPayController : ControllerBase
         // if CheckValid != true -> payment invalid
         if (respronse is not { CheckValid: true  } )
         {
+            return Redirect("http://localhost:8080/callback?status=0");
             throw new BadRequestException("Payment invalid");
         }
         
         // if VnPayResponseCode != 00 -> payment fail
         if (respronse is not { VnPayResponseCode: "00" })
         {
+            return Redirect("http://localhost:8080/callback?status=0");
             throw new BadRequestException("Payment Fail");
         }
         
@@ -90,7 +92,7 @@ public class VnPayController : ControllerBase
         await _subscriptionRepo.CreateSubscription(Convert.ToInt32(userId), int.Parse(planId.ToString()));
 
         // return Ok(userId);
-        return Ok("Payment Success! userId: " + userId + " - planId: "+ planId);
+        return Redirect("http://localhost:8080/callback?status=1");
 
     }
     
