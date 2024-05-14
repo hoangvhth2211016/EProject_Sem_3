@@ -1,14 +1,17 @@
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\appsettings.Development.json
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\appsettings.json
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.staticwebassets.runtime.json
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.exe
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.deps.json
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.runtimeconfig.json
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.pdb
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.xml
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\AutoMapper.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Azure.Core.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Azure.Identity.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\BCrypt.Net-Next.dll
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\CloudinaryDotNet.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Humanizer.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Microsoft.AspNetCore.OpenApi.dll
@@ -36,6 +39,7 @@ D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Mono.TextTemplating.dll
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Newtonsoft.Json.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -124,6 +128,7 @@ D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.csproj.CoreCompileInputs.cache
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.MvcApplicationPartsAssemblyInfo.cs
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.MvcApplicationPartsAssemblyInfo.cache
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.sourcelink.json
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\staticwebassets.build.json
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\staticwebassets.development.json
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\staticwebassets\msbuild.EProject_Sem_3.Microsoft.AspNetCore.StaticWebAssets.props
@@ -135,12 +140,7 @@ D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject.B753332C.Up2Date
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.dll
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\refint\EProject_Sem_3.dll
+D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.xml
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.pdb
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.genruntimeconfig.cache
 D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\ref\EProject_Sem_3.dll
-D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.sourcelink.json
-D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.xml
-D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\obj\Debug\net8.0\EProject_Sem_3.xml
-D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\EProject_Sem_3.staticwebassets.runtime.json
-D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\CloudinaryDotNet.dll
-D:\Personal_Project\Github_Study\EProject_Sem_3\EProject_Sem_3\bin\Debug\net8.0\Newtonsoft.Json.dll
