@@ -38,18 +38,20 @@ public class VnPayController : ControllerBase
     public async Task<IActionResult> PaymentCallBackForOrder()
     {
         var respronse = _vnPayService.PaymentExecute(Request.Query);
-        
+
+        var status = 1;
         
         // if CheckValid != true -> payment invalid
         if (respronse is not { CheckValid: true  } )
         {
-            throw new BadRequestException("Payment invalid");
+            status = 0;
+            
         }
         
         // if VnPayResponseCode != 00 -> payment fail
         if (respronse is not { VnPayResponseCode: "00" } )
         {
-            throw new BadRequestException("Payment Fail");
+            status = 0;
         }
         
         // get orderId from response
@@ -59,7 +61,7 @@ public class VnPayController : ControllerBase
         await _orderRepo.UpdateOrderStatus(Convert.ToInt32(orderId), OrderStatus.Paid);
         
         
-        return Ok("Payment Success! OrderId: " + orderId);
+        return Redirect("http://localhost:8080/callback?status="+status);
 
     }
     
