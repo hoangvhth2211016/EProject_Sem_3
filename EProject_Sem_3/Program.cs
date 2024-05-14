@@ -3,6 +3,7 @@ using System.Text;
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Mapper;
 using EProject_Sem_3.Models;
+using EProject_Sem_3.Repositories;
 using EProject_Sem_3.Repositories.Feedbacks;
 using EProject_Sem_3.Repositories.Plans;
 using EProject_Sem_3.Repositories.Recipes;
@@ -110,6 +111,8 @@ builder.Services.AddScoped<IRecipeImageRepo, RecipeImageRepo>();
 builder.Services.AddScoped<IBookRepo, BookRepo>();
 builder.Services.AddScoped<IOrderRepo, OrderRepo>();
 builder.Services.AddScoped<IOrderDetailRepo, OrderDetailRepo>();
+builder.Services.AddScoped<ISubscriptionRepo, SubscriptionRepo>();
+
 
 // add custom services
 builder.Services.AddSingleton<ITokenService, TokenService>();

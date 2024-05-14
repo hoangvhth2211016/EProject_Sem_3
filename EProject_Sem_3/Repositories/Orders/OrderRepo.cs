@@ -16,21 +16,19 @@ public class OrderRepo : IOrderRepo
 
     private readonly IMapper _mapper;
 
-    private readonly IOrderDetailRepo _orderDetailRepo;
 
-    public OrderRepo(AppDbContext context, IMapper mapper, IOrderDetailRepo orderDetailRepo)
+    public OrderRepo(AppDbContext context, IMapper mapper)
     {
         _context = context;
         _mapper = mapper;
-        _orderDetailRepo = orderDetailRepo;
     }
 
-    public async Task<PageOrderRes> GetAllOrders(int page, int pageSize)
+    public async Task<PaginationRes<OrderRes>> GetAllOrders(PaginationReq pageReq)
     { 
        
         var orders = await _context.Orders
-            .Skip((page - 1) * pageSize)
-            .Take(pageSize)
+            .Skip((pageReq.PageNo -1) * pageReq.PerPage)
+            .Take(pageReq.PerPage)
             .ToListAsync();
         
         
@@ -63,17 +61,9 @@ public class OrderRepo : IOrderRepo
 
         // list Orders --> PageOrder
         var totalOrders = await _context.Orders.CountAsync();
-        var totalPage = (int)Math.Ceiling((double)totalOrders / pageSize);
-        
-        var pageOrderRes = new PageOrderRes
-        {
-            Orders = _mapper.Map<List<OrderRes>>(orders),
-            Page = page,
-            TotalPage = totalPage,
-            TotalOrders = totalOrders
-        };
 
-        return pageOrderRes;
+        return new PaginationRes<OrderRes>(pageReq.PageNo, pageReq.PerPage, totalOrders, _mapper.Map<List<OrderRes>>(orders));
+        
     }
     
     public async Task<OrderRes> GetOrder(int orderId)
