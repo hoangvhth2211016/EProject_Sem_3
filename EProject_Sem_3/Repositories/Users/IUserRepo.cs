@@ -11,6 +11,8 @@ public interface IUserRepo {
 
     Task<User> FindByUsername(string username);
 
+    Task<User> GetUserDetail(String username);
+    
     Task<PaginationRes<User>> FindAll(PaginationReq pageReq);
 
     Task<object?> FindById(int id);

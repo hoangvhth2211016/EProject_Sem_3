@@ -57,18 +57,28 @@ public class UserRepo : IUserRepo {
     }
 
     public async Task<TokenDto> Login(LoginDto dto) {
-        var user = await FindByUsername(dto.Username);
+        var user = await GetUserDetail(dto.Username);
         if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password)) {
             throw new BadRequestException("Password incorrect");
         }
         var token = tokenService.CreateToken(user);
 
-        return new TokenDto { AccessToken = token };
+        return new TokenDto {
+            User = mapper.Map<UserRes>(user),
+            AccessToken = token
+        };
     }
 
     public async Task<User> FindByUsername(string username) {
         var user = await context.Users.FirstOrDefaultAsync(e => e.Username.Equals(username));
         return user ?? throw new NotFoundException("User not found");
+    }
+
+    public async Task<User> GetUserDetail(string username) {
+        return await context.Users
+            .Where(u => u.Username == username)
+            .Include(u => u.Subscriptions)
+            .FirstOrDefaultAsync() ?? throw new NotFoundException("User not found");
     }
 
     public async Task<PaginationRes<User>> FindAll(PaginationReq pageReq) {

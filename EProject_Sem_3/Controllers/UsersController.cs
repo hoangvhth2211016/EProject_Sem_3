@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
+using AutoMapper;
 using EProject_Sem_3.Models;
 
 namespace EProject_Sem_3.Controllers {
@@ -17,9 +18,12 @@ namespace EProject_Sem_3.Controllers {
 
         private readonly IRecipeRepo recipeRepo;
 
-        public UsersController(IUserRepo userRepo, IRecipeRepo recipeRepo) {
+        private readonly IMapper mapper;
+
+        public UsersController(IUserRepo userRepo, IRecipeRepo recipeRepo, IMapper mapper) {
             this.userRepo = userRepo;
             this.recipeRepo = recipeRepo;
+            this.mapper = mapper;
         }
 
 
@@ -30,7 +34,8 @@ namespace EProject_Sem_3.Controllers {
         [HttpGet("Current")]
         public async Task<IActionResult> GetCurrentUser() {
             var name = User.Identity.Name;
-            return Ok(await userRepo.FindByUsername(name));
+            var user = await userRepo.GetUserDetail(name);
+            return Ok(mapper.Map<UserRes>(user));
         }
 
 
@@ -94,7 +99,7 @@ namespace EProject_Sem_3.Controllers {
         /// </summary>
         [Authorize(Roles = "User")]
         [HttpPost("Recipes")]
-        public async Task<IActionResult> CreateUserRecipe(RecipeCreateDto dto) {
+        public async Task<IActionResult> CreateUserRecipe([FromForm] RecipeCreateDto dto) {
             dto.Type = RecipeType.candidate;
             var id = Convert.ToInt16(User.FindFirst("Id")?.Value);
             dto.UserId = id;
@@ -107,7 +112,7 @@ namespace EProject_Sem_3.Controllers {
         /// </summary>
         [Authorize(Roles = "User")]
         [HttpPut("Recipes/{id}")]
-        public async Task<IActionResult> UpdateRecipe(int id, RecipeUpdateDto dto) {
+        public async Task<IActionResult> UpdateRecipe(int id, [FromForm] RecipeUpdateDto dto) {
             await recipeRepo.UpdateRecipe(id, dto);
             return Ok("recipe updated");
         }
