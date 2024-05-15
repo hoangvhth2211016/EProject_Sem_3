@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EProject_Sem_3.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240507032701_update_user_table")]
-    partial class update_user_table
+    [Migration("20240515020153_update_db_take_1")]
+    partial class update_db_take_1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,6 +41,9 @@ namespace EProject_Sem_3.Migrations
 
                     b.Property<string>("Image")
                         .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("UpdatedAt")
@@ -184,6 +187,7 @@ namespace EProject_Sem_3.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Phone")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<int>("Status")
@@ -264,6 +268,10 @@ namespace EProject_Sem_3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<int>("RecipeId")
                         .HasColumnType("int");
 
@@ -296,6 +304,9 @@ namespace EProject_Sem_3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Thumbnail")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -310,6 +321,8 @@ namespace EProject_Sem_3.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("UserId");
 
                     b.ToTable("Recipes");
                 });
@@ -370,6 +383,9 @@ namespace EProject_Sem_3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<bool>("IsActivated")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -410,8 +426,9 @@ namespace EProject_Sem_3.Migrations
                             Id = 1,
                             CreatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "admin@gmail.com",
+                            IsActivated = true,
                             Name = "admin",
-                            Password = "$2a$11$lVA6hqRqG7OUxYO.MjstI.9kY5mW0Cu8OMwj8CKZ0DDxwJ0.05kFq",
+                            Password = "$2a$11$VbtXYj3OwnPNcuCxe7pE.OiI1hL4Z9K6pWU.IsqLZoT41fLNHsb8G",
                             Role = 0,
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "admin"
@@ -466,6 +483,17 @@ namespace EProject_Sem_3.Migrations
                         .IsRequired();
 
                     b.Navigation("Recipe");
+                });
+
+            modelBuilder.Entity("EProject_Sem_3.Models.Recipes.Recipe", b =>
+                {
+                    b.HasOne("EProject_Sem_3.Models.Users.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("EProject_Sem_3.Models.Subscriptions.Subscription", b =>

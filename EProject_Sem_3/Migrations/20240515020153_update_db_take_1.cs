@@ -5,7 +5,7 @@
 namespace EProject_Sem_3.Migrations
 {
     /// <inheritdoc />
-    public partial class Update4 : Migration
+    public partial class update_db_take_1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,7 @@ namespace EProject_Sem_3.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "Password",
-                value: "$2a$11$6MoK2bp9caE9a94a2Tt8uOLx0HOSpCoF4BdYOnOfSiRRQsWwFY8ZG");
+                value: "$2a$11$VbtXYj3OwnPNcuCxe7pE.OiI1hL4Z9K6pWU.IsqLZoT41fLNHsb8G");
         }
 
         /// <inheritdoc />
@@ -26,7 +26,7 @@ namespace EProject_Sem_3.Migrations
                 keyColumn: "Id",
                 keyValue: 1,
                 column: "Password",
-                value: "$2a$11$Pypn7U4UNHUem9n/fY1DWefnLpIN3jW38cIpRCCOPVHpuPj8yGjFm");
+                value: "$2a$11$yjWf5Jnjf1Cm0W4q8ZHfr.8TYc3PACRlBiXN9mOabGxdYrddF96dS");
         }
     }
 }

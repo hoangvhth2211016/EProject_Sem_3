@@ -47,7 +47,7 @@ public class UserRepo : IUserRepo {
     }
 
     public async Task<TokenDto> Login(LoginDto dto) {
-        var user = await FindByUsername(dto.Username);
+        var user = await GetUserDetail(dto.Username);
         
         //check activation 
         if (!user.IsActivated)
@@ -55,7 +55,6 @@ public class UserRepo : IUserRepo {
             throw new UnauthorizedAccessException("User is not activated");
         }
         
-        var user = await GetUserDetail(dto.Username);
         if (!BCrypt.Net.BCrypt.Verify(dto.Password, user.Password)) {
             throw new BadRequestException("Password incorrect");
         }
