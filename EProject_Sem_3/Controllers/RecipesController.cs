@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Recipes;
 using EProject_Sem_3.Models.Users;
@@ -19,9 +20,12 @@ namespace EProject_Sem_3.Controllers {
 
         private readonly IEmailSender emailSender;
 
-        public RecipesController(IRecipeRepo recipeRepo,IEmailSender emailSender) {
+        private readonly IUserRepo userRepo;
+
+        public RecipesController(IRecipeRepo recipeRepo,IEmailSender emailSender,IUserRepo userRepo) {
             this.recipeRepo = recipeRepo;
             this.emailSender = emailSender;
+            this.userRepo = userRepo;
         }
 
 
@@ -111,17 +115,26 @@ namespace EProject_Sem_3.Controllers {
             var isRewarded = await recipeRepo.RewardRecipe(id);
 
             var recipe = await recipeRepo.FindByIdBase(id);
+
+            var user = await userRepo.FindById(recipe.UserId) as UserRes 
+                       ?? throw new NotFoundException("User not found");
             
-            //send email
-            await emailSender.SendEmail(new MailTemplate
+            if (isRewarded)
             {
-                ToAddress = recipe.User.Email,
-                Subject = "Ice Scream Parlour",
-                Body = "<h1>Congratulations! Your recipe: <span style='color:red'>"+recipe.Title+" <span> won our award<h1>" +
-                       ""+
-                       "<div>We will send the reward to you as soon as possible!<div>" +
-                       "<div>Thank you for contributing your ideas<div>"
-            });
+                //send email
+                await emailSender.SendEmail(new MailTemplate
+                {
+                    
+                    ToAddress = user.Email,
+                    Subject = "Ice Scream Parlour",
+                    Body = "<h1>Congratulations! Your recipe: " +
+                           "<span style='color:red'>"+recipe.Title+" </span> won our award" +
+                           "</h1>" +
+                           "<p>We will send the reward to you as soon as possible!</p>" +
+                           "<p>Thank you for contributing your ideas</p>"
+                });
+            }
+            
                 
             return isRewarded ? Ok("Recipe rewarded") : BadRequest("Recipe is unable to reward or already rewarded");
         }

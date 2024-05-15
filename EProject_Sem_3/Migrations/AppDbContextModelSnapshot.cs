@@ -425,7 +425,7 @@ namespace EProject_Sem_3.Migrations
                             Email = "admin@gmail.com",
                             IsActivated = true,
                             Name = "admin",
-                            Password = "$2a$11$VbtXYj3OwnPNcuCxe7pE.OiI1hL4Z9K6pWU.IsqLZoT41fLNHsb8G",
+                            Password = "$2a$11$VSuc2twSDXzXPqFNsS1X9OaMsxcAlflauV8m7DrvU4LpWL7JOhC..",
                             Role = 0,
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "admin"
