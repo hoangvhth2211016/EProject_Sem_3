@@ -132,7 +132,8 @@ namespace EProject_Sem_3.Repositories.Recipes {
                     UpdatedAt = r.UpdatedAt,
                     Title = r.Title,
                     Type = r.Type,
-                    Thumbnail = r.Thumbnail
+                    Thumbnail = r.Thumbnail,
+                    ShortDescription = r.ShortDescription
                 })
                 .ToListAsync();
 

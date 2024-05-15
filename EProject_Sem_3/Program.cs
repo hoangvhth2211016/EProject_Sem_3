@@ -51,7 +51,7 @@ builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 builder.Services.AddSwaggerGen(option =>
 {
-    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Ice Scream Parlour", Version = "v1" });
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Ice Cream Parlour", Version = "v1" });
     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,

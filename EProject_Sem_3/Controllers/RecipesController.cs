@@ -126,12 +126,21 @@ namespace EProject_Sem_3.Controllers {
                 {
                     
                     ToAddress = user.Email,
-                    Subject = "Ice Scream Parlour",
-                    Body = "<h1>Congratulations! Your recipe: " +
-                           "<span style='color:red'>"+recipe.Title+" </span> won our award" +
+                    Subject = "Ice Cream Parlour Reward",
+                    Body = "<p>Dear "+user.Name+","+
+                           "<br>" +
+                           "<br>" +
+                           "<h1>Congratulations! Your recipe: " +
+                           "<span style='color:red'>" + "recipeTitle" + "</span> won our award" +
                            "</h1>" +
                            "<p>We will send the reward to you as soon as possible!</p>" +
-                           "<p>Thank you for contributing your ideas</p>"
+                           "<br>" +
+                           "<p>Thank you for contributing your ideas</p>" +
+                           "<br>" +
+                           "<br>" +
+                           "<p>Best regards," +
+                           "<br>" +
+                           "<p>Ice Cream Parlour</p>"
                 });
             }
             
