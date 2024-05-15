@@ -7,7 +7,5 @@
         Return = 5,
         Returned = 6,
         Cancel = 7
-        
-        
     }
 }

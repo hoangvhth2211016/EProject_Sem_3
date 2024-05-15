@@ -17,6 +17,8 @@ namespace EProject_Sem_3.Models.Recipes {
         [DataType(DataType.MultilineText)]
         public required string Description { get; set; }
 
+        public IFormFile? Thumbnail { get; set; }
+
         public ICollection<IFormFile>? Files { get; set; } = [];
 
         public RecipeType Type { get; set; }

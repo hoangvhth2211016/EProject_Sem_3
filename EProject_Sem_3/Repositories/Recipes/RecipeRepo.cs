@@ -4,6 +4,7 @@ using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Recipes;
 using EProject_Sem_3.Models.Users;
 using EProject_Sem_3.Repositories.RecipeImages;
+using EProject_Sem_3.Services.FileService;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
@@ -16,10 +17,13 @@ namespace EProject_Sem_3.Repositories.Recipes {
 
         private readonly IRecipeImageRepo recipeImageRepo;
 
-        public RecipeRepo(AppDbContext context, IMapper mapper, IRecipeImageRepo recipeImageRepo) {
+        private readonly IFileService imageService;
+
+        public RecipeRepo(AppDbContext context, IMapper mapper, IRecipeImageRepo recipeImageRepo, IFileService imageService) {
             this.context = context;
             this.mapper = mapper;
             this.recipeImageRepo = recipeImageRepo;
+            this.imageService = imageService;
         }
 
         // create Recipe
@@ -27,10 +31,21 @@ namespace EProject_Sem_3.Repositories.Recipes {
             Recipe recipe = mapper.Map<Recipe>(dto);
             var entityEntry = await context.Recipes.AddAsync(recipe);
             await context.SaveChangesAsync();
+            var newRecipe = entityEntry.Entity;
             if (!dto.Files.IsNullOrEmpty())
             {
-                var newRecipe = entityEntry.Entity;
                 await recipeImageRepo.Create(newRecipe, dto.Files);
+            }
+            if (dto.Thumbnail != null)
+            {
+                string name = recipe.Id + "_thumbnail";
+                string image = await imageService.Upload(new FileModel() { 
+                    File = dto.Thumbnail,
+                    Name = name,
+                    Path = "recipes"
+                });
+                newRecipe.Thumbnail = image;
+                await context.SaveChangesAsync();
             }
         }
 
@@ -81,6 +96,16 @@ namespace EProject_Sem_3.Repositories.Recipes {
                 return;
             }
             mapper.Map(dto, recipe);
+            if (dto.Thumbnail != null)
+            {
+                string name = recipe.Id + "_thumbnail";
+                string image = await imageService.Upload(new FileModel() { 
+                    File = dto.Thumbnail,
+                    Name = name,
+                    Path = "recipes"
+                });
+                recipe.Thumbnail = image;
+            }
             await context.SaveChangesAsync();
             if(!dto.Files.IsNullOrEmpty())
                 await recipeImageRepo.Create(recipe, dto.Files);
@@ -114,6 +139,21 @@ namespace EProject_Sem_3.Repositories.Recipes {
             return list;
         }
         
+        public async Task DeleteRecipeImageById(int recipeId, int imageId) {
+            var isImageExist = await context.RecipeImages
+                .AnyAsync(r => r.RecipeId == recipeId && r.Id == imageId);
+            if (isImageExist)
+            {
+                await recipeImageRepo.Delete(imageId);
+            }
+        }
+
+        public async Task DeleteRecipeThumbnail(int recipeId) {
+            var recipe = await FindByIdBase(recipeId);
+            await imageService.Delete("recipes/"+recipeId+"_thumbnail");
+            recipe.Thumbnail = null;
+            await context.SaveChangesAsync();
+        }
         
 
         public IQueryable<Recipe> FromAdmin() {
@@ -141,13 +181,6 @@ namespace EProject_Sem_3.Repositories.Recipes {
             return await query.CountAsync();
         }
         
-        public async Task DeleteRecipeImageById(int recipeId, int imageId) {
-            var isImageExist = await context.RecipeImages
-                .AnyAsync(r => r.RecipeId == recipeId && r.Id == imageId);
-            if (isImageExist)
-            {
-                await recipeImageRepo.Delete(imageId);
-            }
-        }
+      
     }
 }
