@@ -1,9 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Recipes;
 using EProject_Sem_3.Models.Users;
 using EProject_Sem_3.Repositories.Recipes;
 using EProject_Sem_3.Repositories.Users;
+using EProject_Sem_3.Services.MailService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Authorization.Infrastructure;
 using Microsoft.AspNetCore.Http;
@@ -16,8 +18,14 @@ namespace EProject_Sem_3.Controllers {
 
         private readonly IRecipeRepo recipeRepo;
 
-        public RecipesController(IRecipeRepo recipeRepo) {
+        private readonly IEmailSender emailSender;
+
+        private readonly IUserRepo userRepo;
+
+        public RecipesController(IRecipeRepo recipeRepo,IEmailSender emailSender,IUserRepo userRepo) {
             this.recipeRepo = recipeRepo;
+            this.emailSender = emailSender;
+            this.userRepo = userRepo;
         }
 
 
@@ -105,6 +113,38 @@ namespace EProject_Sem_3.Controllers {
         [HttpPatch("{id}")]
         public async Task<IActionResult> RewardRecipe(int id) {
             var isRewarded = await recipeRepo.RewardRecipe(id);
+
+            var recipe = await recipeRepo.FindByIdBase(id);
+
+            var user = await userRepo.FindById(recipe.UserId) as UserRes 
+                       ?? throw new NotFoundException("User not found");
+            
+            if (isRewarded)
+            {
+                //send email
+                await emailSender.SendEmail(new MailTemplate
+                {
+                    
+                    ToAddress = user.Email,
+                    Subject = "Ice Cream Parlour Reward",
+                    Body = "<p>Dear "+user.Name+","+
+                           "<br>" +
+                           "<br>" +
+                           "<h1>Congratulations! Your recipe: " +
+                           "<span style='color:red'>" + "recipeTitle" + "</span> won our award" +
+                           "</h1>" +
+                           "<p>We will send the reward to you as soon as possible!</p>" +
+                           "<br>" +
+                           "<p>Thank you for contributing your ideas</p>" +
+                           "<br>" +
+                           "<br>" +
+                           "<p>Best regards," +
+                           "<br>" +
+                           "<p>Ice Cream Parlour</p>"
+                });
+            }
+            
+                
             return isRewarded ? Ok("Recipe rewarded") : BadRequest("Recipe is unable to reward or already rewarded");
         }
 

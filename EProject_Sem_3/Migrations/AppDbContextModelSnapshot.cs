@@ -301,6 +301,10 @@ namespace EProject_Sem_3.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("ShortDescription")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Thumbnail")
                         .HasColumnType("nvarchar(max)");
 
@@ -425,7 +429,7 @@ namespace EProject_Sem_3.Migrations
                             Email = "admin@gmail.com",
                             IsActivated = true,
                             Name = "admin",
-                            Password = "$2a$11$VbtXYj3OwnPNcuCxe7pE.OiI1hL4Z9K6pWU.IsqLZoT41fLNHsb8G",
+                            Password = "$2a$11$ufcUdfsy.WO2/FfOy31XhubxtuyDQSwdlsGfP2QRKsnFopd0ef9ry",
                             Role = 0,
                             UpdatedAt = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Username = "admin"

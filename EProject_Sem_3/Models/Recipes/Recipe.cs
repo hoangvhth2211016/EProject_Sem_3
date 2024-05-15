@@ -17,6 +17,9 @@ namespace EProject_Sem_3.Models.Recipes {
 
         [Required]
         public required string Description { get; set; }
+        
+        [Required]
+        public required string ShortDescription {get; set;}
 
         public RecipeType Type { get; set; }
 

@@ -12,10 +12,13 @@ using EProject_Sem_3.Repositories.Orders;
 using EProject_Sem_3.Repositories.OrdersDetail;
 using EProject_Sem_3.Repositories.RecipeImages;
 using EProject_Sem_3.Repositories.Users;
+using EProject_Sem_3.Services.EMailService;
 using EProject_Sem_3.Services.FileService;
+using EProject_Sem_3.Services.MailService;
 using EProject_Sem_3.Services.TokenService;
 using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
@@ -48,7 +51,7 @@ builder.Services.AddAutoMapper(typeof(MapperProfile));
 
 builder.Services.AddSwaggerGen(option =>
 {
-    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Ice Scream Parlour", Version = "v1" });
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Ice Cream Parlour", Version = "v1" });
     option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
@@ -118,6 +121,7 @@ builder.Services.AddScoped<ISubscriptionRepo, SubscriptionRepo>();
 builder.Services.AddSingleton<ITokenService, TokenService>();
 builder.Services.AddSingleton<IVnPayService, VnPayService>();
 builder.Services.AddSingleton<IFileService, ImageService>();
+builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 

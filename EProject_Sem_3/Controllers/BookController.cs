@@ -33,7 +33,7 @@ namespace EProject_Sem_3.Controllers
         // get book
         [Authorize(Roles = "Admin")]
         [HttpGet("{id}")]
-        public async Task<IActionResult> GetUser(int id)
+        public async Task<IActionResult> GetBook(int id)
         {
             return Ok(await _bookRepo.GetBook(id));
         }
