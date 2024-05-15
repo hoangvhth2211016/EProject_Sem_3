@@ -18,4 +18,6 @@ public class RecipeCardRes
     
     public string Thumbnail { get; set; }
     
+    public string AuthorName { get; set; }
+    
 }

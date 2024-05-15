@@ -46,32 +46,7 @@ public class OrderController : ControllerBase
         return Ok(await _orderRepo.GetOrder(orderId));
     }
 
-    [HttpPost]
-    public async Task<IActionResult> CreateOrder(OrderDto dto)
-    {
-        if (!ModelState.IsValid) {
-            return BadRequest(ModelState);
-        }
-
-        // save order to db
-        var order = await _orderRepo.CreateOrder(dto);
-        
-        // save orderDetail to db
-        await _orderDetailRepo.CreateOrderDetail(order.Id, dto);
-        
-        
-        // create payment url
-        var vnPayModel = new VnPaymentOrderRequestModel()
-        {
-            TotalAmount = dto.TotalAmount,
-            OrderId = order.Id,
-            Phone = order.Phone
-        };
-        
-        // return url
-        return Ok(_vnPayService.CreatePaymentUrlForOrder(vnPayModel));
-        
-    }
+    
     
     [HttpPut("{orderId}")]
     [Authorize(Roles = "Admin")]

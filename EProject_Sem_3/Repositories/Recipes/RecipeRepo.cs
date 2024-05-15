@@ -51,8 +51,19 @@ namespace EProject_Sem_3.Repositories.Recipes {
 
 
         // find all recipes
-        public async Task<ICollection<Recipe>> FindAll() {
-            return await context.Recipes.ToListAsync();
+        public async Task<ICollection<RecipeCardRes>> FindAll() {
+            return await context.Recipes
+                .Select(r => new RecipeCardRes {
+                    Id = r.Id,
+                    UserId = r.UserId,
+                    CreatedAt = r.CreatedAt,
+                    UpdatedAt = r.UpdatedAt,
+                    Title = r.Title,
+                    Type = r.Type,
+                    Thumbnail = r.Thumbnail,
+                    AuthorName = r.User.Name
+                })
+                .ToListAsync();
         }
 
         // find by recipe id with scenario
@@ -133,7 +144,8 @@ namespace EProject_Sem_3.Repositories.Recipes {
                     Title = r.Title,
                     Type = r.Type,
                     Thumbnail = r.Thumbnail,
-                    ShortDescription = r.ShortDescription
+                    ShortDescription = r.ShortDescription,
+                    AuthorName = r.User.Name
                 })
                 .ToListAsync();
 

@@ -31,10 +31,23 @@ namespace EProject_Sem_3.Controllers {
 
         /// <summary>
         /// get all recipes for public page except the candidate. Candidate recipes should be separated to another route.
+        /// Provide recipe type to get recipes by typeIf type == candidate throw 401, if not provided return all record
         /// </summary>
         [HttpGet]
-        public async Task<IActionResult> GetAllForPublic([FromQuery] PaginationReq pageReq) {
-            var query = recipeRepo.ForPublic();
+        public async Task<IActionResult> GetAllForPublic([FromQuery] RecipeType? type,[FromQuery] PaginationReq pageReq) {
+            IQueryable<Recipe> query;
+            if (type == null || !Enum.IsDefined(typeof(RecipeType), type))
+            {
+                query = recipeRepo.ForPublic();
+            }
+            else if (type == RecipeType.candidate)
+            {
+                return Unauthorized("Unauthorized request");
+            }
+            else
+            {
+                query = recipeRepo.ForPublicWithSort((RecipeType) type);
+            }
             var totalRecords = await recipeRepo.CountRecord(query);
             var list = await recipeRepo.ProcessPage(pageReq,query);
             return  Ok(new PaginationRes<RecipeCardRes>(pageReq.PageNo, pageReq.PerPage, totalRecords, list));
