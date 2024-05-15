@@ -6,7 +6,7 @@ namespace EProject_Sem_3.Repositories.Recipes {
     public interface IRecipeRepo {
         Task Create(RecipeCreateDto dto);
 
-        Task<ICollection<Recipe>> FindAll();
+        Task<ICollection<RecipeCardRes>> FindAll();
 
         Task<RecipeRes> FindById(int id, string? role = null);
 
