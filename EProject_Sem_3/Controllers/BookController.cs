@@ -53,9 +53,7 @@ namespace EProject_Sem_3.Controllers
         //delete book
         [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
-        public async Task<IActionResult> DeleteBook(int id)
-        {
-            
+        public async Task<IActionResult> DeleteBook(int id) {
             return Ok(await _bookRepo.DeleteBook(id));
         }
         

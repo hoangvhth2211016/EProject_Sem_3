@@ -80,7 +80,7 @@ namespace EProject_Sem_3.Controllers {
         /// </summary>
         [Authorize(Roles = "Admin")]
         [HttpPost]
-        public async Task<IActionResult> CreateAdminRecipe(RecipeCreateDto dto) {
+        public async Task<IActionResult> CreateAdminRecipe([FromForm] RecipeCreateDto dto) {
             if (((dto.Type != RecipeType.free)) && (dto.Type !=RecipeType.premium)) { 
                 return BadRequest("invalid recipe type");
             }                       
@@ -96,7 +96,7 @@ namespace EProject_Sem_3.Controllers {
         /// </summary>
         [Authorize]
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateRecipe(int id, RecipeUpdateDto dto) {
+        public async Task<IActionResult> UpdateRecipe(int id, [FromForm] RecipeUpdateDto dto) {
             await recipeRepo.UpdateRecipe(id, dto);
             return Ok("Recipe updated");
         }
@@ -141,8 +141,18 @@ namespace EProject_Sem_3.Controllers {
         /// </summary>
         [Authorize]
         [HttpDelete("{recipeId}/Images/{imageId}")]
-        public async Task<IActionResult> DeleteRecipe(int recipeId, int imageId) {
+        public async Task<IActionResult> DeleteRecipeImage(int recipeId, int imageId) {
             await recipeRepo.DeleteRecipeImageById(recipeId, imageId);
+            return Ok("Recipe image deleted");
+        }
+        
+        /// <summary>
+        /// delete recipe image
+        /// </summary>
+        [Authorize]
+        [HttpDelete("{recipeId}/Thumbnail")]
+        public async Task<IActionResult> DeleteRecipeThumbnail(int recipeId) {
+            await recipeRepo.DeleteRecipeThumbnail(recipeId);
             return Ok("Recipe image deleted");
         }
         
