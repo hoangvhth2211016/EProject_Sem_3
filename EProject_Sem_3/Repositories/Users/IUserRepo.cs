@@ -13,7 +13,7 @@ public interface IUserRepo {
 
     Task<User> GetUserDetail(String username);
     
-    Task<PaginationRes<User>> FindAll(PaginationReq pageReq);
+    Task<PaginationRes<UserRes>> FindAll(PaginationReq pageReq);
 
     Task<object?> FindById(int id);
 

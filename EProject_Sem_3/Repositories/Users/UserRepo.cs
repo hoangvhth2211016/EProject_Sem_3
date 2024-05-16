@@ -78,9 +78,11 @@ public class UserRepo : IUserRepo {
             .FirstOrDefaultAsync() ?? throw new NotFoundException("User not found");
     }
 
-    public async Task<PaginationRes<User>> FindAll(PaginationReq pageReq) {
+    public async Task<PaginationRes<UserRes>> FindAll(PaginationReq pageReq) {
         
-        var user = await context.Users
+        var users = await context.Users
+            .Include(u => u.Subscriptions)
+            .ThenInclude(s => s.Plan)
             .OrderBy(u => u.Id)
             .Skip((pageReq.PageNo - 1) * pageReq.PerPage)
             .Take(pageReq.PerPage)
@@ -88,7 +90,9 @@ public class UserRepo : IUserRepo {
 
         var totalRecords = await context.Users.CountAsync();
 
-        return new PaginationRes<User>(pageReq.PageNo, pageReq.PerPage, totalRecords, user);
+        var mappedUsers = mapper.Map<List<User>, List<UserRes>>(users);
+        
+        return new PaginationRes<UserRes>(pageReq.PageNo, pageReq.PerPage, totalRecords, mappedUsers);
     }
 
     public async Task<object?> FindById(int id) {
