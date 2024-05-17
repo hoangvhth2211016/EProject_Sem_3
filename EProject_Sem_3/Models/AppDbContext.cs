@@ -29,12 +29,34 @@ public class AppDbContext : DbContext {
                 Name = "admin",
                 Email = "admin@gmail.com",
                 Password = BCrypt.Net.BCrypt.HashPassword("admin"),
-                Role = Role.Admin
+                Role = Role.Admin,
+                IsActivated = true
             }
             );
-
+        
+        // for plans
+        modelBuilder.Entity<Plan>().HasData(
+            new Plan {
+                Id = 1,
+                Price = 15,
+                Type = PlanType.Monthly
+            },
+            new Plan {
+                Id = 2,
+                Price = 150,
+                Type = PlanType.Yearly
+            }
+            );
+        
         base.OnModelCreating(modelBuilder);
+        
+        // When deleting an order, the corresponding orderDetail will be deleted
+        modelBuilder.Entity<Order>()
+            .HasMany(o => o.OrderDetails)
+            .WithOne(od => od.Order)
+            .OnDelete(DeleteBehavior.Cascade);
     }
+    
 
     public DbSet<User> Users { get; set; }
 

@@ -1,11 +1,26 @@
+using System.Reflection;
 using System.Text;
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Mapper;
 using EProject_Sem_3.Models;
+using EProject_Sem_3.Repositories;
+using EProject_Sem_3.Repositories.Feedbacks;
+using EProject_Sem_3.Repositories.Plans;
+using EProject_Sem_3.Repositories.Recipes;
+using EProject_Sem_3.Repositories.Books;
+using EProject_Sem_3.Repositories.Orders;
+using EProject_Sem_3.Repositories.OrdersDetail;
+using EProject_Sem_3.Repositories.RecipeImages;
 using EProject_Sem_3.Repositories.Users;
+using EProject_Sem_3.Services.EMailService;
+using EProject_Sem_3.Services.FileService;
+using EProject_Sem_3.Services.MailService;
 using EProject_Sem_3.Services.TokenService;
+using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
@@ -19,15 +34,26 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 
+// add Cors
+builder.Services.AddCors(options => {
+    options.AddPolicy("ApiPolicy", p => {
+        p.AllowAnyOrigin();
+        p.AllowAnyHeader();
+        p.AllowAnyMethod();
+    });
+});
+
 // add db context
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection")));
 
 // add mapper
 builder.Services.AddAutoMapper(typeof(MapperProfile));
 
-builder.Services.AddSwaggerGen(option => {
-    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Ice Scream Parlour", Version = "v1" });
-    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme {
+builder.Services.AddSwaggerGen(option =>
+{
+    option.SwaggerDoc("v1", new OpenApiInfo { Title = "Ice Cream Parlour", Version = "v1" });
+    option.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
         In = ParameterLocation.Header,
         Description = "Please enter a valid token",
         Name = "Authorization",
@@ -49,18 +75,23 @@ builder.Services.AddSwaggerGen(option => {
             new string[]{}
         }
     });
+    var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    option.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename));
 });
 
 // add authentication
 builder.Services
-    .AddAuthentication(options => {
+    .AddAuthentication(options =>
+    {
         options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
         options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
     })
-    .AddJwtBearer(options => {
+    .AddJwtBearer(options =>
+    {
         options.IncludeErrorDetails = true;
-        options.TokenValidationParameters = new TokenValidationParameters() {
+        options.TokenValidationParameters = new TokenValidationParameters()
+        {
             ClockSkew = TimeSpan.Zero,
             ValidateIssuer = false,
             ValidateAudience = false,
@@ -76,19 +107,34 @@ builder.Services
 
 // add repositories
 builder.Services.AddScoped<IUserRepo, UserRepo>();
+builder.Services.AddScoped<IPlanRepo, PlanRepo>();
+builder.Services.AddScoped<IFeedbackRepo, FeedbackRepo>();
+builder.Services.AddScoped<IRecipeRepo, RecipeRepo>();
+builder.Services.AddScoped<IRecipeImageRepo, RecipeImageRepo>();
+builder.Services.AddScoped<IBookRepo, BookRepo>();
+builder.Services.AddScoped<IOrderRepo, OrderRepo>();
+builder.Services.AddScoped<IOrderDetailRepo, OrderDetailRepo>();
+builder.Services.AddScoped<ISubscriptionRepo, SubscriptionRepo>();
+
 
 // add custom services
 builder.Services.AddSingleton<ITokenService, TokenService>();
+builder.Services.AddSingleton<IVnPayService, VnPayService>();
+builder.Services.AddSingleton<IFileService, ImageService>();
+builder.Services.AddSingleton<IEmailSender, EmailSender>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment()) {
+if (app.Environment.IsDevelopment())
+{
     app.UseSwagger();
     app.UseSwaggerUI();
 }
 
 app.UseHttpsRedirection();
+
+app.UseCors("ApiPolicy");
 
 app.UseAuthentication();
 
@@ -99,4 +145,3 @@ app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.MapControllers();
 
 app.Run();
-

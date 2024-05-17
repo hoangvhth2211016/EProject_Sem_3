@@ -1,9 +1,13 @@
 ﻿using AutoMapper;
+using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Users;
+using EProject_Sem_3.Repositories.Plans;
 using EProject_Sem_3.Repositories.Users;
+using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Identity.Client;
 
 namespace EProject_Sem_3.Controllers {
     [Route("api/[controller]")]
@@ -11,45 +15,50 @@ namespace EProject_Sem_3.Controllers {
     public class AuthController : ControllerBase {
 
         private readonly IUserRepo userRepo;
+        
+        private readonly IVnPayService vnPayService;
+        
+        private readonly IPlanRepo planRepo;
 
-        private IMapper mapper;
-
-        public AuthController(IUserRepo userRepo, IMapper mapper) {
+        public AuthController(IUserRepo userRepo,IVnPayService vnPayService,IPlanRepo planRepo) {
             this.userRepo = userRepo;
-            this.mapper = mapper;
+            this.vnPayService = vnPayService;
+            this.planRepo = planRepo;
+
         }
 
+        /// <summary>
+        /// register user
+        /// </summary>
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterDto dto) {
-            if (!ModelState.IsValid) {
-                return BadRequest(ModelState);
-            }
-            User newUser = mapper.Map<User>(dto);
-            newUser.Role = Role.User;
-            newUser.Password = BCrypt.Net.BCrypt.HashPassword(newUser.Password);
-            int success = await userRepo.Register(newUser);
-            if (success > 0) {
-                return Ok(newUser);
-            }
-            return BadRequest("Unable to create user");
+            var user = await userRepo.Register(dto);
+
+            var model = new VnPaymentSubscriptionRequestModel();
+
+            // var plan = await planRepo.FindById(dto.planId);
+            model.TotalAmount = (dto.PlanId == 1 ? 15 : 150) * 25000; 
+            model.PlanId = dto.PlanId;
+            model.UserId = user.Id;
+            
+            
+            return Ok(vnPayService.CreatePaymentUrlForSubscription(model));
+                
         }
 
+        /// <summary>
+        /// login
+        /// </summary>
         [HttpPost("Login")]
         public async Task<IActionResult> Login(LoginDto dto) {
-            if (!ModelState.IsValid) {
-                return BadRequest(ModelState);
-            }
             TokenDto token = await userRepo.Login(dto);
-            if (token == null) {
-                return BadRequest("Unable to login");
-            }
             return Ok(token);
         }
 
-        [Authorize(Roles = "User,Admin")]
+        //[Authorize(Roles = "User,Admin")]
         [HttpGet("Test")]
         public IActionResult Test() {
-            return Ok("this route is protected");
+            return Ok(User.Identity.IsAuthenticated);
         }
 
     }
