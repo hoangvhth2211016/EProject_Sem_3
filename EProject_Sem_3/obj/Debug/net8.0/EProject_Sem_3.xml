@@ -1,0 +1,187 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EProject_Sem_3</name>
+    </assembly>
+    <members>
+        <member name="M:EProject_Sem_3.Controllers.AuthController.Register(EProject_Sem_3.Models.Users.RegisterDto)">
+            <summary>
+            register user
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.AuthController.Login(EProject_Sem_3.Models.Users.LoginDto)">
+            <summary>
+            login
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.FeedBacksController.GetAll">
+            <summary>
+            get all feedbacks, only for admin
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.FeedBacksController.GetById(System.Int32)">
+            <summary>
+            get feedback by id, only for admin
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.FeedBacksController.Create(EProject_Sem_3.Models.Feedbacks.FeedbackCreateDto)">
+            <summary>
+            create feedback
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.PlansController.GetAll">
+            <summary>
+            get all subscription plan
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.PlansController.GetById(System.Int32)">
+            <summary>
+            get plan by id
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.GetAllForPublic(System.Nullable{EProject_Sem_3.Models.Recipes.RecipeType},EProject_Sem_3.Models.PaginationReq)">
+            <summary>
+            get all recipes for public page except the candidate. Candidate recipes should be separated to another route.
+            Provide recipe type to get recipes by typeIf type == candidate throw 401, if not provided return all record
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.GetAllForAdmin(System.String,EProject_Sem_3.Models.PaginationReq)">
+            <summary>
+            get all recipes, either from "Admin" or "User", otherwise return all recipes from the stores for testing purpose
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.GetById(System.Int32)">
+            <summary>
+            get recipe by id, accept access for all user but with conditions to view
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.CreateAdminRecipe(EProject_Sem_3.Models.Recipes.RecipeCreateDto)">
+            <summary>
+            create recipe as Admin
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.UpdateRecipe(System.Int32,EProject_Sem_3.Models.Recipes.RecipeUpdateDto)">
+            <summary>
+            update recipe
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.RewardRecipe(System.Int32)">
+            <summary>
+            reward user's recipe, change from candidate to user
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.DeleteRecipe(System.Int32)">
+            <summary>
+            delete recipe
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.DeleteRecipeImage(System.Int32,System.Int32)">
+            <summary>
+            delete recipe image
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.RecipesController.DeleteRecipeThumbnail(System.Int32)">
+            <summary>
+            delete recipe image
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.GetCurrentUser">
+            <summary>
+            get current user information
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.GetAll(EProject_Sem_3.Models.PaginationReq)">
+            <summary>
+            get all users, only for admin
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.GetById(System.Int32)">
+            <summary>
+            get user by id, only for admin
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.UpdateUser(EProject_Sem_3.Models.Users.UserUpdateDto)">
+            <summary>
+            update user information
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.ChangePassword(EProject_Sem_3.Models.Users.ChangePasswordDto)">
+            <summary>
+            Change user Password
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.GetRecipesFromCurrentUser(EProject_Sem_3.Models.PaginationReq)">
+            <summary>
+            Get Current User Recipes
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.CreateUserRecipe(EProject_Sem_3.Models.Recipes.RecipeCreateDto)">
+            <summary>
+            Create Recipe as User
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.UpdateRecipe(System.Int32,EProject_Sem_3.Models.Recipes.RecipeUpdateDto)">
+            <summary>
+            Update User Recipe, can only be change when recipe's type is still candidate
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.UpdateAvatar(Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Update User Avatar
+            </summary>
+        </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.DeleteAvatar">
+            <summary>
+            Delete User Avatar
+            </summary>
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.Init">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.Init.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.Init.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.Init.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.update_db_take_1">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.update_db_take_1.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.update_db_take_1.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.update_db_take_1.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.a">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.a.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.a.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.a.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.aa">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.aa.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.aa.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.aa.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

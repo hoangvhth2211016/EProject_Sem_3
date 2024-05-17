@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj": {}
+    "/Users/quanganh/Documents/coder/project-sem3/EProject_Sem_3/EProject_Sem_3/EProject_Sem_3.csproj": {}
   },
   "projects": {
-    "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj": {
+    "/Users/quanganh/Documents/coder/project-sem3/EProject_Sem_3/EProject_Sem_3/EProject_Sem_3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj",
+        "projectUniqueName": "/Users/quanganh/Documents/coder/project-sem3/EProject_Sem_3/EProject_Sem_3/EProject_Sem_3.csproj",
         "projectName": "EProject_Sem_3",
-        "projectPath": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\EProject_Sem_3.csproj",
-        "packagesPath": "C:\\Users\\Acer\\.nuget\\packages\\",
-        "outputPath": "D:\\Personal_Project\\Github_Study\\EProject_Sem_3\\EProject_Sem_3\\obj\\",
+        "projectPath": "/Users/quanganh/Documents/coder/project-sem3/EProject_Sem_3/EProject_Sem_3/EProject_Sem_3.csproj",
+        "packagesPath": "/Users/quanganh/.nuget/packages/",
+        "outputPath": "/Users/quanganh/Documents/coder/project-sem3/EProject_Sem_3/EProject_Sem_3/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Acer\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "/Users/quanganh/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -94,7 +92,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.201/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
