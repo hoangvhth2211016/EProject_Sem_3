@@ -25,5 +25,7 @@ namespace EProject_Sem_3.Models.Users {
         public string Country { get; set; }
 
         public ICollection<SubscriptionRes> Subscriptions { get; set; }
+        
+        public bool IsActivated { get; set; }
     }
 }

@@ -105,6 +105,11 @@
             update user information
             </summary>
         </member>
+        <member name="M:EProject_Sem_3.Controllers.UsersController.UpdateUser(System.Int32)">
+            <summary>
+            activated or deactivated user
+            </summary>
+        </member>
         <member name="M:EProject_Sem_3.Controllers.UsersController.ChangePassword(EProject_Sem_3.Models.Users.ChangePasswordDto)">
             <summary>
             Change user Password
@@ -181,6 +186,18 @@
             <inheritdoc />
         </member>
         <member name="M:EProject_Sem_3.Migrations.aa.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:EProject_Sem_3.Migrations.ab">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.ab.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.ab.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:EProject_Sem_3.Migrations.ab.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

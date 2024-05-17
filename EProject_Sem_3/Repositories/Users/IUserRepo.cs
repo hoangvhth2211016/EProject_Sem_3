@@ -25,4 +25,5 @@ public interface IUserRepo {
 
     Task ActivateUser(int userId);
     Task DeleteAvatar(User user);
+    Task<bool> HandleUserActivation(int id);
 }

@@ -69,6 +69,17 @@ namespace EProject_Sem_3.Controllers {
             var updatedUser = await userRepo.UpdateUser(user, dto);
             return Ok(updatedUser);
         }
+        
+        /// <summary>
+        /// activated or deactivated user
+        /// </summary>
+        [Authorize("Admin")]
+        [HttpPatch("{id}")]
+        public async Task<IActionResult> UpdateUser(int id) {
+            var isActivated = await userRepo.HandleUserActivation(id);
+            
+            return Ok("User has been " + (isActivated ? "activated" : "deactivated") );
+        }
 
         /// <summary>
         /// Change user Password

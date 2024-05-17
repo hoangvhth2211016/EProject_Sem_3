@@ -1,6 +1,7 @@
 using AutoMapper;
 using BCrypt.Net;
 using EProject_Sem_3.Exceptions;
+using EProject_Sem_3.Migrations;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Subscriptions;
 using EProject_Sem_3.Models.Users;
@@ -150,5 +151,16 @@ public class UserRepo : IUserRepo {
         user.Avatar = null;
         await fileService.Delete("users/" + user.Username);
         await context.SaveChangesAsync();
+    }
+
+    public async Task<bool> HandleUserActivation(int id)
+    {
+        var user = await context.Users.FindAsync(id) ?? throw new NotFoundException("User not found");
+
+        user.IsActivated = !user.IsActivated;
+
+        await context.SaveChangesAsync();
+
+        return user.IsActivated;
     }
 }

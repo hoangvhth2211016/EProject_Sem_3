@@ -32,7 +32,7 @@ public class ImageService : IFileService
             File = new FileDescription(model.File.Name, stream)
         };
         var result = await cloudinary.UploadAsync(uploadParam);
-        return result.Url.ToString();
+        return result.SecureUrl.ToString();
     }
 
     public async Task Delete(string name) {

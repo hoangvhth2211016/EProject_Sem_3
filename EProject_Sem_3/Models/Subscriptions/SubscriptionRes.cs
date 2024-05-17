@@ -8,6 +8,10 @@ namespace EProject_Sem_3.Models.Subscriptions {
         public DateTime ExpiredAt { get; set; }
 
         public PlanRes Plan { get; set; }
+        
+        public DateTime CreatedAt { get; set; }
+        
+        public DateTime UpdatedAt { get; set; }
 
     }
 }
