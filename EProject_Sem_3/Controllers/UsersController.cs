@@ -73,7 +73,7 @@ namespace EProject_Sem_3.Controllers {
         /// <summary>
         /// activated or deactivated user
         /// </summary>
-        [Authorize("Admin")]
+        [Authorize(Roles = "Admin")]
         [HttpPatch("{id}")]
         public async Task<IActionResult> UpdateUser(int id) {
             var isActivated = await userRepo.HandleUserActivation(id);
