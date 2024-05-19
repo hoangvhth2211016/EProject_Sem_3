@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Users;
+using EProject_Sem_3.Repositories.Books;
 using EProject_Sem_3.Repositories.Plans;
 using EProject_Sem_3.Repositories.Users;
 using EProject_Sem_3.Services.VnpayService;
@@ -33,7 +34,6 @@ namespace EProject_Sem_3.Controllers {
         [HttpPost("Register")]
         public async Task<IActionResult> Register(RegisterDto dto) {
             var user = await userRepo.Register(dto);
-
             var model = new VnPaymentSubscriptionRequestModel();
 
             // var plan = await planRepo.FindById(dto.planId);

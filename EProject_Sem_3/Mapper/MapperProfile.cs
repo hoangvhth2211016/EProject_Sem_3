@@ -1,4 +1,5 @@
 using AutoMapper;
+using EProject_Sem_3.Models.BookImages;
 using EProject_Sem_3.Models.Feedbacks;
 using EProject_Sem_3.Models.Plans;
 using EProject_Sem_3.Models.RecipeImages;
@@ -52,8 +53,19 @@ public class MapperProfile : Profile
 
             return src.Select(book => mapper.Map<BookRes>(book)).ToList();
         });
+        
+        // map image for imageRes
+        CreateMap<BookImage, BookImageRes>();
 
+        // map for list of booksImageRes
+        CreateMap<List<BookImage>, List<BookImageRes>>().ConvertUsing((src, dest, context) =>
+        {
+            var mapper = context.Mapper;
 
+            return src.Select(book => mapper.Map<BookImageRes>(book)).ToList();
+        });
+        
+        
         // map OrderDetail for OrderDetailRes
         CreateMap<OrderDetail, OrderDetailRes>()
             .ForMember(dest => dest.Book,

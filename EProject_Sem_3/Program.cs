@@ -117,6 +117,7 @@ builder.Services.AddScoped<IOrderDetailRepo, OrderDetailRepo>();
 builder.Services.AddScoped<ISubscriptionRepo, SubscriptionRepo>();
 
 
+
 // add custom services
 builder.Services.AddSingleton<ITokenService, TokenService>();
 builder.Services.AddSingleton<IVnPayService, VnPayService>();

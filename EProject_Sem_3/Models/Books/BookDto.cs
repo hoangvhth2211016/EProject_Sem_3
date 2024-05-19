@@ -12,6 +12,7 @@ public class BookDto
     [Required]
     public required string Title { get; set; }
 
+    
     [Required]
     [Column(TypeName = "decimal(18, 2)")]
     public required decimal Price { get; set; }
