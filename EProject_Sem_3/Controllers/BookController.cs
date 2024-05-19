@@ -2,6 +2,7 @@
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Mapper;
 using EProject_Sem_3.Models;
+using EProject_Sem_3.Models.BookImages;
 using EProject_Sem_3.Models.Books;
 using EProject_Sem_3.Models.Orders;
 using EProject_Sem_3.Repositories.Books;
@@ -11,6 +12,7 @@ using EProject_Sem_3.Services.VnpayService;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace EProject_Sem_3.Controllers
 {
@@ -22,17 +24,20 @@ namespace EProject_Sem_3.Controllers
         private readonly IOrderRepo _orderRepo;
         private readonly IOrderDetailRepo _orderDetailRepo;
         private readonly IVnPayService _vnPayService;
+        private readonly AppDbContext _dbContext;
 
 
         public BookController(IBookRepo bookRepo,
                                 IOrderRepo orderRepo,
                                 IOrderDetailRepo orderDetailRepo,
-                                IVnPayService vnPayService)
+                                IVnPayService vnPayService,
+                                AppDbContext dbContext)
         {
             _bookRepo = bookRepo;
             _orderRepo = orderRepo;
             _orderDetailRepo = orderDetailRepo;
             _vnPayService = vnPayService;
+            _dbContext = dbContext;
         }
 
 
@@ -55,9 +60,6 @@ namespace EProject_Sem_3.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateBook([FromBody] BookDto bookDto)
         {
-            if (!ModelState.IsValid) {
-                return BadRequest(ModelState);
-            }
             
             return Ok(await _bookRepo.CreateBook(bookDto));
         }
@@ -72,7 +74,7 @@ namespace EProject_Sem_3.Controllers
         // update book
         [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateBook(int id,BookDto bookDto)
+        public async Task<IActionResult> UpdateBook(int id,[FromBody] BookDto bookDto)
         {
             if (!ModelState.IsValid) {
                 return BadRequest(ModelState);
@@ -80,6 +82,52 @@ namespace EProject_Sem_3.Controllers
             
             return Ok(await _bookRepo.UpdateBook(id,bookDto));
         }
+
+        // upload image book
+        [Authorize(Roles = "Admin")]
+        [HttpPost("{id}/UploadImageBook")]
+        public async Task<IActionResult> UploadImageBook(int id,string imageUrl)
+        {
+            var existingBook = await _dbContext.Books.FirstOrDefaultAsync(b => b.Id == id)
+                ?? throw new NotFoundException("Book not found");
+            
+            // create image book object
+            var bookImage = new BookImage
+            {
+                Image = imageUrl,
+                BookId = id,
+                Book = existingBook,
+            };
+
+            // add to db
+            _dbContext.BookImages.Add(bookImage);
+
+            // save db
+            await _dbContext.SaveChangesAsync();
+
+            
+            return Ok("Image uploaded successfully.");
+        }
+
+        
+        // delete Image Book
+        [HttpDelete("{id}/DeleteImage")]
+        public async Task<IActionResult> DeleteImageBook(int id, string imageUrl)
+        {
+            var existingBook = await _dbContext.Books.FirstOrDefaultAsync(b => b.Id == id)
+                               ?? throw new NotFoundException("Book not found");
+            
+            var existingImage = await _dbContext.BookImages.FirstOrDefaultAsync(i => i.Image == imageUrl)
+                               ?? throw new NotFoundException("Image Book not found");
+
+
+            _dbContext.BookImages.Remove(existingImage);
+            await _dbContext.SaveChangesAsync();
+
+            return Ok("The image book has been deleted");
+        }
+        
+        
         
         [HttpPost("checkout")]
         public async Task<IActionResult> Checkout(OrderDto dto)

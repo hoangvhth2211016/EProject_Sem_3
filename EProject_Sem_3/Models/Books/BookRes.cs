@@ -16,5 +16,5 @@ public class BookRes
     
     public required string Description { get; set; }
     
-    public List<BookImage> BookImages { get; set; } = [];
+    public List<BookImageRes> BookImages { get; set; } = [];
 }
