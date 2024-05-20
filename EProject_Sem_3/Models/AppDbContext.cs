@@ -55,6 +55,12 @@ public class AppDbContext : DbContext {
             .HasMany(o => o.OrderDetails)
             .WithOne(od => od.Order)
             .OnDelete(DeleteBehavior.Cascade);
+        
+        // When deleting an book, the corresponding image book will be deleted
+        modelBuilder.Entity<Book>()
+            .HasMany(o => o.BookImages)
+            .WithOne(od => od.Book)
+            .OnDelete(DeleteBehavior.Cascade);
     }
     
 

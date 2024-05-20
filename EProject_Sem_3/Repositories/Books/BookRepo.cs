@@ -1,6 +1,7 @@
 using AutoMapper;
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
+using EProject_Sem_3.Models.BookImages;
 using EProject_Sem_3.Models.Books;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,7 +28,9 @@ public class BookRepo : IBookRepo
             var bookImages = _context.BookImages
                 .Where(b =>  b.BookId== book.Id)
                 .ToList();
+            
             book.BookImages = bookImages;
+            
         }
 
         return _mapper.Map<List<BookRes>>(books);
