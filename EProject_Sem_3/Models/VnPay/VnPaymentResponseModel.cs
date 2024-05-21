@@ -6,6 +6,8 @@ public class VnPaymentResponseModel
     public string Respronse { get; set; }
     public string VnPayResponseCode { get; set; }
     
+    public long TotalAmount { get; set; }
+    
 }
 
 
