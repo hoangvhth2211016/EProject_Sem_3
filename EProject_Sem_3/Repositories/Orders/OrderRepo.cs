@@ -31,33 +31,6 @@ public class OrderRepo : IOrderRepo
             .Take(pageReq.PerPage)
             .ToListAsync();
         
-        
-        foreach (var order in orders)
-        {
-            var orderDetails = _context.OrderDetails
-                .Where(od => od.OrderId == order.Id)
-                .ToList();
-            
-            foreach (var orderDetail in orderDetails)
-            {
-               
-                // add list book for order detail
-                var book = await _context.Books.FindAsync(orderDetail.BookId)??
-                            throw new NotFoundException("Book not found");
-                orderDetail.Book = book;
-                
-                // add list bookImages for Book
-                var bookImages = _context.BookImages
-                    .Where(b =>  b.BookId== book.Id)
-                    .ToList();
-                book.BookImages = bookImages;
-
-            }
-            
-            // add list OrdersDetail for orders
-            order.OrderDetails = orderDetails;
-            
-        }
 
         // list Orders --> PageOrder
         var totalOrders = await _context.Orders.CountAsync();
@@ -76,6 +49,12 @@ public class OrderRepo : IOrderRepo
        var orderDetails = _context.OrderDetails
            .Where(od => od.OrderId == order.Id)
            .ToList();
+
+       foreach (var detail in orderDetails)
+       {
+           detail.Book = await _context.Books.FindAsync(detail.BookId) ??
+                         throw new NotFoundException("Book not found");
+       }
        
        return _mapper.Map<OrderRes>(order);
     }
