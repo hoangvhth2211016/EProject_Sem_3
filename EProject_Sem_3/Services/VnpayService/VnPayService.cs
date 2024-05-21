@@ -87,6 +87,7 @@ public class VnPayService : IVnPayService
         var vnp_SecureHash = collections
             .FirstOrDefault(p => p.Key == "vnp_SecureHash").Value;
         var vnp_ResponseCode = vnpay.GetResponseData("vnp_ResponseCode");
+        var vnp_Amount = vnpay.GetResponseData("vnp_Amount");
         
 
         bool checkSignature = vnpay.ValidateSignature(vnp_SecureHash, _config["VnPay:HashSecret"]);
@@ -102,7 +103,8 @@ public class VnPayService : IVnPayService
         {
             CheckValid = true,
             Respronse = respronse,
-            VnPayResponseCode = vnp_ResponseCode
+            VnPayResponseCode = vnp_ResponseCode,
+            TotalAmount = Convert.ToInt64(vnp_Amount)
         };
     }
 

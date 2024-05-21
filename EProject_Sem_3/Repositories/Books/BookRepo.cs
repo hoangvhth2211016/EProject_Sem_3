@@ -38,7 +38,16 @@ public class BookRepo : IBookRepo
 
     public async Task<BookRes> GetBook(int id)
     {
-        return _mapper.Map<BookRes>(await _context.Books.FindAsync(id)) 
+        var book = await _context.Books.FindAsync(id);
+        
+        // add list bookImages for Book
+        var bookImages = _context.BookImages
+            .Where(b =>  b.BookId== book.Id)
+            .ToList();
+        
+        book.BookImages = bookImages;
+        
+        return _mapper.Map<BookRes>(book) 
                ??
                throw new NotFoundException("Book not found");
     }

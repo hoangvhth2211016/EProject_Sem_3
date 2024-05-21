@@ -35,7 +35,7 @@ namespace EProject_Sem_3.Controllers {
         public async Task<IActionResult> Register(RegisterDto dto) {
             var user = await userRepo.Register(dto);
             var model = new VnPaymentSubscriptionRequestModel();
-
+            
             // var plan = await planRepo.FindById(dto.planId);
             model.TotalAmount = (dto.PlanId == 1 ? 15 : 150) * 25000; 
             model.PlanId = dto.PlanId;

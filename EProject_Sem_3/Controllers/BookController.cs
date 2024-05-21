@@ -146,7 +146,7 @@ namespace EProject_Sem_3.Controllers
             // create payment url
             var vnPayModel = new VnPaymentOrderRequestModel()
             {
-                TotalAmount = dto.TotalAmount,
+                TotalAmount = dto.TotalAmount * 25000,
                 OrderId = order.Id,
                 Phone = order.Phone
             };

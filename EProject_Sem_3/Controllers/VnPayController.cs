@@ -1,3 +1,4 @@
+using AutoMapper;
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Models.Orders;
@@ -64,20 +65,37 @@ public class VnPayController : ControllerBase
         }
         
         // get orderId from response
-        var orderId = respronse.Respronse.Substring(0, respronse.Respronse.Length - 5);
-       
+        var orderIdTring = respronse.Respronse.Substring(0, respronse.Respronse.Length - 5);
+        var orderId = Convert.ToInt32(orderIdTring);
         // if payment success -> change status Paid
         await _orderRepo.UpdateOrderStatus(Convert.ToInt32(orderId), OrderStatus.Paid);
         
         
         // send mail to user
-        var order = await _orderRepo.GetOrder(Convert.ToInt32(orderId));
+        var products = new List<(string productName, int quantity)>();
+        
+        var orderDetails = await _dbContext.OrderDetails
+            .Where(od => od.OrderId == Convert.ToInt32(orderId))
+            .Include(od => od.Book) // Include Book to get BookName
+            .ToListAsync();
+        
+        foreach (var orderDetail in orderDetails)
+        {
+            products.Add((orderDetail.Book.Title, orderDetail.Quantity));
+        }
 
+        var order = await _dbContext.Orders.FindAsync(orderId) ?? throw new NotFoundException("Order Not Found") ;
+
+        var body = _emailSender.CreateOrderEmailBody(
+            order.Name, order.Phone,
+            order.Street + "," + order.City + "," + order.City,
+            (int)(respronse.TotalAmount / 25000), products);
+        
         await _emailSender.SendEmail(new MailTemplate
         {
             ToAddress = order.Email,
             Subject = "Ice Scream Parlour",
-            Body = "<h1 style='color:red'>Ordered books successfully!\nYou will receive your book in the next few days!<h1>"
+            Body = body
         });
         
         return Redirect("http://localhost:8080/callback?status="+status);

@@ -1,5 +1,6 @@
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using EProject_Sem_3.Exceptions;
 using EProject_Sem_3.Models;
 using EProject_Sem_3.Services.MailService;
@@ -44,6 +45,33 @@ public class EmailSender : IEmailSender
         {
             throw new BadRequestException("Fail to send email: "+ex.Message);
         }
+    }
+    
+    public string CreateOrderEmailBody(string name, string phone, string address, decimal totalAmount, List<(string productName, int quantity)> products)
+    {
+        StringBuilder sb = new StringBuilder();
+        sb.Append("<html><body>");
+        sb.Append("<h1>Ordered books successfully!<h1>");
+        sb.Append("You will receive your book in the next few days!<h1>");
+        sb.Append("<h2>Order Info</h2>");
+        sb.AppendFormat("<p><strong>Your name:</strong> {0}</p>", name);
+        sb.AppendFormat("<p><strong>Your telephone number:</strong> {0}</p>", phone);
+        sb.AppendFormat("<p><strong>Your address:</strong> {0}</p>", address);
+        sb.AppendFormat("<p><strong>Total Amount:</strong> ${0}</p>", totalAmount);
+
+        sb.Append("<h3>List books</h3>");
+        sb.Append("<table border='1' style='border-collapse:collapse; width: 100%;'>");
+        sb.Append("<tr><th>Book name</th><th>Quantity</th></tr>");
+
+        foreach (var product in products)
+        {
+            sb.AppendFormat("<tr><td>{0}</td><td>{1}</td></tr>", product.productName, product.quantity);
+        }
+
+        sb.Append("</table>");
+        sb.Append("</body></html>");
+
+        return sb.ToString();
     }
     
    
