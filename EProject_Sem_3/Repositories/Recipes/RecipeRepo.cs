@@ -73,7 +73,7 @@ namespace EProject_Sem_3.Repositories.Recipes {
                 .Include(r => r.Images)
                 .Where(r => id == r.Id);
 
-            if (role == "Anomymous") {
+            if (role == "Anonymous") {
                 // If role is not specified (free user) then user can only view free recipes
                 query = query.Where(r => r.Type == RecipeType.free);
             }
