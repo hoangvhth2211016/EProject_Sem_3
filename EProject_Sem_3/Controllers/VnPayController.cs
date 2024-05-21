@@ -78,18 +78,21 @@ public class VnPayController : ControllerBase
             .Where(od => od.OrderId == Convert.ToInt32(orderId))
             .Include(od => od.Book) // Include Book to get BookName
             .ToListAsync();
+
+        Decimal total = 0;
         
         foreach (var orderDetail in orderDetails)
         {
             products.Add((orderDetail.Book.Title, orderDetail.Quantity));
+            total += orderDetail.Quantity * orderDetail.PurchasePrice;
         }
 
         var order = await _dbContext.Orders.FindAsync(orderId) ?? throw new NotFoundException("Order Not Found") ;
-
+        
         var body = _emailSender.CreateOrderEmailBody(
             order.Name, order.Phone,
             order.Street + "," + order.City + "," + order.City,
-            (int)(respronse.TotalAmount / 25000), products);
+            total, products);
         
         await _emailSender.SendEmail(new MailTemplate
         {
